@@ -1,0 +1,17 @@
+.site-header {
+    text-align: center;
+}
+
+.site-footer {
+    text-align: center;
+}
+
+.steps {
+    display: flex;
+    flex-direction: row;
+}
+
+.steps > .step {
+    display: inline-block;
+}
+

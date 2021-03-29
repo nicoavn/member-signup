@@ -13,8 +13,14 @@ class CreateUploadedDocumentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('UploadedDocument', function (Blueprint $table) {
+        Schema::create('uploaded_documents', function (Blueprint $table) {
             $table->id();
+
+            $table->string('document_type');
+            $table->string('filename');
+
+            $table->foreignId('driver_id')->constrained();
+
             $table->timestamps();
         });
     }
@@ -26,6 +32,6 @@ class CreateUploadedDocumentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('UploadedDocument');
+        Schema::dropIfExists('uploaded_documents');
     }
 }
