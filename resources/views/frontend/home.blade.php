@@ -4,6 +4,6 @@
 
 @section('content')
     <br>
-    <p>CONTENT OF HOME PAGE</p>
+    <p>CONTENT OF HOME PAGE here</p>
     <br>
 @endsection
