@@ -7,9 +7,6 @@ include "configuracion.php"
 @section('title', 'Sign Up')
 
 @section('content')
-
-
-
     <div class="SignUpContent">
         <div class="CommonArea">
             <div class="container-fluid" id="grad1">
@@ -29,7 +26,7 @@ include "configuracion.php"
                                             </ul>
                                             <div class="FormSection  bs-stepper-content">
                                                 <!--Step 1-->
-                                                <fieldset id="progressbar">
+                                                <fieldset id="step-1">
                                                     <h2 id="account-2" class="fs-title text-center"><?php echo $lang['DRIVER REGISTRATION'] ?></h2>
 
                                                     <p class="fs-title-3 text-center"><?php echo $lang['Please fill this form with your documents information'] ?></p>
@@ -480,7 +477,7 @@ include "configuracion.php"
                                             </fieldset>
 
                                             <!--Step 4-->
-                                            <fieldset>
+                                            <fieldset id="step-4">
                                                 <h2 id="payment" class="fs-title text-center"><?php echo $lang['DOCUMENTS UPLOAD'] ?></h2>
 
                                                 <p class="fs-title-3 text-center"><?php echo $lang['Please scan and upload the required documents below'] ?></p>
@@ -588,7 +585,7 @@ include "configuracion.php"
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="{{ URL::asset('js/jquery-3.2.1.min_compressed.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/stripe_custom.js') }}"></script>
+{{--    <script type="text/javascript" src="{{ URL::asset('js/stripe_custom.js') }}"></script>--}}
     <script type="text/javascript" src="{{ URL::asset('js/visible_plugin.js') }}"></script>
 
 
@@ -596,31 +593,131 @@ include "configuracion.php"
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
 
 
-
-
-
     <!--Este es el JS de el Stepper-->
     <script type="text/javascript">
+        var currentStep = 'step-1';
+        var steps = ['step-1', 'step-2', 'step-3', 'step-4'];
+
+        function validateStepNoInputEmpty(step) {
+            var valid = true;
+            var fields = step.find('input[type=text]');
+            fields.each(function (i, f) {
+                var field = $(f);
+                if (!field.prop('required')) {
+                    return;
+                }
+
+                if (f.value.length <= 0) {
+                    valid = false;
+                }
+            });
+
+            return valid;
+        }
+
+        function validateStepNoDropdownSelected(step) {
+            var valid = true;
+            var fields = step.find('select');
+            fields.each(function (i, field) {
+                if (field.value.length <= 0) {
+                    valid = false;
+                }
+            });
+
+            return valid;
+        }
+
+        function validateStepNoCheckboxRadioSelected(step) {
+            var valid = true;
+            var fields = step.find('input[type=radio]');
+            fields.each(function (i, field) {
+                if (field.value.length <= 0) {
+                    valid = false;
+                }
+            });
+
+            return valid;
+        }
+
+        function validateDriverReg() {
+            var step = $('#step-1').first();
+            return (
+                validateStepNoInputEmpty(step)
+                && validateStepNoDropdownSelected(step)
+                && validateStepNoCheckboxRadioSelected(step)
+            );
+        }
+
+        function validateCarReg() {
+            var step = $('#step-2').first();
+            return (
+                validateStepNoInputEmpty(step)
+                && validateStepNoDropdownSelected(step)
+                && validateStepNoCheckboxRadioSelected(step)
+            );
+        }
+
+        function validateConditionsReview() {
+            var step = $('#step-3').first();
+            return (
+                validateStepNoInputEmpty(step)
+                && validateStepNoDropdownSelected(step)
+                && validateStepNoCheckboxRadioSelected(step)
+            );
+        }
+
+        function validateDocumentsUpload() {
+            var step = $('#step-4').first();
+            return (
+                validateStepNoInputEmpty(step)
+                && validateStepNoDropdownSelected(step)
+                && validateStepNoCheckboxRadioSelected(step)
+            );
+        }
 
         function showError() {
             alert('Algo esta mal');
         }
 
         $(document).ready(function(){
-
             var current_fs, next_fs, previous_fs; //fieldsets
             var opacity;
 
             var valid = false;
 
-            $(".next").click(function(){
-                if (!valid && false) {
-                    showError();
+            $(".next").click(function(event){
+                switch (currentStep) {
+                    case "step-2":
+                        valid = validateCarReg();
+                        break;
+                    case "step-3":
+                        valid = validateConditionsReview();
+                        break;
+                    case "step-4":
+                        valid = validateDocumentsUpload();
+                        break;
+                    default:
+                    case "step-1":
+                        valid = validateDriverReg();
+                        break;
+                }
+
+                var parent = $(this).parent();
+
+                if (!valid) {
+                    parent.addClass('was-validated');
                     return;
                 }
 
-                current_fs = $(this).parent();
-                next_fs = $(this).parent().next();
+                debugger;
+                try {
+                    currentStep = steps[steps.indexOf(currentStep) + 1]
+                } catch (err) {
+                    // ignore
+                }
+
+                current_fs = parent;
+                next_fs = parent.next();
 
                 //Add Class Active
                 $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
@@ -645,8 +742,10 @@ include "configuracion.php"
 
             $(".previous").click(function(){
 
-                current_fs = $(this).parent();
-                previous_fs = $(this).parent().prev();
+                var parent = $(this).parent();
+
+                current_fs = parent;
+                previous_fs = parent.prev();
 
                 //Remove class active
                 $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
@@ -677,16 +776,10 @@ include "configuracion.php"
 
             $("submit").click(function(){
                 return false;
-            })
-
+            });
         });
-
-
     </script>
     <!--End este es el JS de el Stepper-->
-
-
-
 
 
     <!--Este es el JS para la Validacion-->
@@ -702,44 +795,16 @@ include "configuracion.php"
             Array.prototype.slice.call(forms)
                 .forEach(function (form) {
                     form.addEventListener('submit', function (event) {
-                        if (!form.checkValidity()) {
-                            event.preventDefault()
-                            event.stopPropagation()
+                        if (!validateDriverReg()
+                            || !validateCarReg()
+                            || !validateConditionsReview()
+                            || !validateDocumentsUpload()) {
+                            event.preventDefault();
+                            event.stopPropagation();
                         }
-
                         form.classList.add('was-validated')
-                    }, false)
-                })
-        })()
-
+                    }, false);
+                });
+        })();
     </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @endsection
