@@ -28,5 +28,6 @@
 <script type="text/javascript" src="{{ URL::asset('js/jquery-3.2.1.min_compressed.js') }}"></script>
 {{--<script type="text/javascript" src="{{ URL::asset('js/stripe_custom.js') }}"></script>--}}
 <script type="text/javascript" src="{{ URL::asset('js/visible_plugin.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/idioma.js') }}"></script>
 </body>
 </html>
