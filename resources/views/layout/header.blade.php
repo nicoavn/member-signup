@@ -14,7 +14,7 @@
             <div id="myNavbar-1" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="menu-nav slide"><a class="btn btn-primary btn-book" href="" role="button" target="_blank"><?php echo $lang['LOG IN'] ?></a></li>
-                    <li id="menu-drive"class="menu-nav slide"><a href="contact.php"><?php echo $lang['SIGN UP'] ?></a></li>
+                    <li id="menu-drive"class="menu-nav slide"><a href="signup"><?php echo $lang['SIGN UP'] ?></a></li>
                     <li class="menu-nav slide"><a data-toggle="modal" data-target="#gridSystemModal" style="font-weight: normal;cursor: pointer;"><?php echo $lang['Idioma'] ?></a></li>
                 </ul>
             </div>
