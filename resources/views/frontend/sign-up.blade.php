@@ -244,6 +244,19 @@ include "configuracion.php"
 
                                                     <p class="fs-title-3 text-center"><?php echo $lang['Please fill this form with your documents information'] ?></p>
 
+                                                    <span class="legend"><?php echo $lang['YEAR'] ?></span>
+                                                    <div class="row">
+                                                        <div class="col-md-10">
+                                                            <label for="validationSelectYear" class="form-label"></label>
+                                                            <select id="validationSelectYear" class="form-select" required>
+                                                                <option selected><?php echo $lang['Select Year'] ?></option>
+                                                            </select>
+                                                            <div class="invalid-feedback">
+                                                                Please select a valid Car Year.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                     <span class="legend"><?php echo $lang['CAR MAKE'] ?></span>
                                                     <div class="row">
                                                         <div class="col-md-10">
@@ -256,6 +269,7 @@ include "configuracion.php"
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                     <span class="legend"><?php echo $lang['CAR MODEL'] ?></span>
                                                     <div class="row">
                                                         <div class="col-md-10">
@@ -268,6 +282,7 @@ include "configuracion.php"
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                     <span class="legend"><?php echo $lang['COLOR'] ?></span>
                                                     <div class="row">
                                                         <div class="col-md-10">
@@ -277,18 +292,6 @@ include "configuracion.php"
                                                             </select>
                                                             <div class="invalid-feedback">
                                                                 Please select a valid Car Color.
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <span class="legend"><?php echo $lang['YEAR'] ?></span>
-                                                    <div class="row">
-                                                        <div class="col-md-10">
-                                                            <label for="validationSelectYear" class="form-label"></label>
-                                                            <select id="validationSelectYear" class="form-select" required>
-                                                                <option selected><?php echo $lang['Select Year'] ?></option>
-                                                            </select>
-                                                            <div class="invalid-feedback">
-                                                                Please select a valid Car Year.
                                                             </div>
                                                         </div>
                                                     </div>
@@ -783,38 +786,66 @@ include "configuracion.php"
     <!--Cargar Marcas / Modelos-->
     <script type="text/javascript">
         // Example starter JavaScript for disabling form submissions if there are invalid fields
+        var years = [];
         var makes = [];
         var models = [];
         var apiUrl = "http://localhost/api";
         var selectedMake = 'Honda';
         var selectedModel = 'Civic';
+        var selectedYear = new Date().getFullYear();
+        var currentYear = new Date().getFullYear();
+        var minYear = new Date().getFullYear() - 25;
+
+        function loadYears() {
+            var control = $("#validationSelectYear");
+            control.html('<option selected>{{ $lang['Select Year'] }}</option>');
+            for (var i = currentYear; i >= minYear; i--) {
+                control.append('<option value="' + i + '">' + i + '</option>');
+            }
+        }
 
         function loadVehicleMakes() {
-            var url = apiUrl + "/vehicle/makes";
+            var url = apiUrl + "/vehicle/makes/" + selectedYear;
             $.get(url, function (response) {
                 makes = response.data;
+                var control = $("#validationSelectMaker");
+                control.html('<option selected>{{ $lang['Select Maker'] }}</option>');
                 $.each(makes, function(i, d) {
                     // You will need to alter the below to get the right values from your json object.  Guessing that d.id / d.modelName are columns in your carModels data
-                    $('#validationSelectMaker').append('<option value="' + d + '">' + d + '</option>');
+                    control.append('<option value="' + d + '">' + d + '</option>');
                 });
             });
         }
 
         function loadVehicleModels() {
-            var url = apiUrl + "/vehicle/" + selectedMake + "/models";
+            var url = apiUrl + "/vehicle/" + selectedMake.toLowerCase() + "/models/" + selectedYear;
             $.get(url, function (response) {
                 models = response.data;
+                var control = $('#validationSelectModel');
+                control.html('<option selected>{{ $lang['Select Model'] }}</option>');
                 $.each(models, function(i, d) {
                     // You will need to alter the below to get the right values from your json object.  Guessing that d.id / d.modelName are columns in your carModels data
-                    $('#validationSelectModel').append('<option value="' + d + '">' + d + '</option>');
+                    control.append('<option value="' + d + '">' + d + '</option>');
                 });
             });
         }
 
         (function () {
             'use strict'
+
+            $('#validationSelectMaker').change(function (val) {
+                selectedMake = val.target.value;
+                loadVehicleModels();
+            });
+
+            $('#validationSelectYear').change(function (val) {
+                selectedYear = val.target.value;
+                loadVehicleMakes();
+            });
+
+            loadYears();
             loadVehicleMakes();
-            loadVehicleModels();
+            // loadVehicleModels();
         })();
     </script>
 

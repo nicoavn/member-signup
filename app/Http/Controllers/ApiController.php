@@ -38,7 +38,7 @@ class ApiController extends Controller
             $year = date("Y");
         }
 
-        $cacheKey = "vehicle_models_$year";
+        $cacheKey = "vehicle_models_$make\_$year";
 
         $models = Cache::rememberForever($cacheKey, function () use ($make, $year) {
             $req = Http::get(self::VEHICLE_API_URL . '/model?make=' . $make . '&year=' . $year);
