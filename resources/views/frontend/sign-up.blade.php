@@ -92,7 +92,6 @@ include "configuracion.php"
                                                             <label for="validationCity" class="form-label"></label>
                                                             <select id="validationCity" class="form-select" required>
                                                                 <option selected><?php echo $lang['City'] ?></option>
-                                                                <option>...</option>
                                                             </select>
                                                             <div class="invalid-feedback">
                                                                 Please select a valid City.
@@ -105,7 +104,6 @@ include "configuracion.php"
                                                                 <label for="validationState" class="form-label"></label>
                                                                 <select id="validationState" class="form-select" required>
                                                                     <option selected><?php echo $lang['State'] ?></option>
-                                                                    <option>...</option>
                                                                 </select>
                                                                 <div class="invalid-feedback">
                                                                     Please select a valid state.
@@ -252,7 +250,6 @@ include "configuracion.php"
                                                             <label for="validationSelectMaker" class="form-label"></label>
                                                             <select id="validationSelectMaker" class="form-select" required>
                                                                 <option selected><?php echo $lang['Select Maker'] ?></option>
-                                                                <option>...</option>
                                                             </select>
                                                             <div class="invalid-feedback">
                                                                 Please select a valid Car Make.
@@ -265,7 +262,6 @@ include "configuracion.php"
                                                             <label for="validationSelectModel" class="form-label"></label>
                                                             <select id="validationSelectModel" class="form-select" required>
                                                                 <option selected><?php echo $lang['Select Model'] ?></option>
-                                                                <option>...</option>
                                                             </select>
                                                             <div class="invalid-feedback">
                                                                 Please select a valid Car Model.
@@ -278,7 +274,6 @@ include "configuracion.php"
                                                             <label for="validationSelectColor" class="form-label"></label>
                                                             <select id="validationSelectColor" class="form-select" required>
                                                                 <option selected><?php echo $lang['Select Color'] ?></option>
-                                                                <option>...</option>
                                                             </select>
                                                             <div class="invalid-feedback">
                                                                 Please select a valid Car Color.
@@ -291,7 +286,6 @@ include "configuracion.php"
                                                             <label for="validationSelectYear" class="form-label"></label>
                                                             <select id="validationSelectYear" class="form-select" required>
                                                                 <option selected><?php echo $lang['Select Year'] ?></option>
-                                                                <option>...</option>
                                                             </select>
                                                             <div class="invalid-feedback">
                                                                 Please select a valid Car Year.
@@ -618,8 +612,13 @@ include "configuracion.php"
         function validateStepNoDropdownSelected(step) {
             var valid = true;
             var fields = step.find('select');
-            fields.each(function (i, field) {
-                if (field.value.length <= 0) {
+            fields.each(function (i, f) {
+                var field = $(f);
+                if (!field.prop('required')) {
+                    return;
+                }
+
+                if (f.value.length <= 0) {
                     valid = false;
                 }
             });
@@ -630,8 +629,13 @@ include "configuracion.php"
         function validateStepNoCheckboxRadioSelected(step) {
             var valid = true;
             var fields = step.find('input[type=radio]');
-            fields.each(function (i, field) {
-                if (field.value.length <= 0) {
+            fields.each(function (i, f) {
+                var field = $(f);
+                if (!field.prop('required')) {
+                    return;
+                }
+
+                if (!f.checked) {
                     valid = false;
                 }
             });
@@ -641,38 +645,34 @@ include "configuracion.php"
 
         function validateDriverReg() {
             var step = $('#step-1').first();
-            return (
-                validateStepNoInputEmpty(step)
-                && validateStepNoDropdownSelected(step)
-                && validateStepNoCheckboxRadioSelected(step)
-            );
+            var valid = validateStepNoInputEmpty(step);
+            valid = validateStepNoDropdownSelected(step) && valid;
+            valid = validateStepNoCheckboxRadioSelected(step) && valid;
+            return valid || true;
         }
 
         function validateCarReg() {
             var step = $('#step-2').first();
-            return (
-                validateStepNoInputEmpty(step)
-                && validateStepNoDropdownSelected(step)
-                && validateStepNoCheckboxRadioSelected(step)
-            );
+            var valid = validateStepNoInputEmpty(step);
+            valid = validateStepNoDropdownSelected(step) && valid;
+            valid = validateStepNoCheckboxRadioSelected(step) && valid;
+            return valid;
         }
 
         function validateConditionsReview() {
             var step = $('#step-3').first();
-            return (
-                validateStepNoInputEmpty(step)
-                && validateStepNoDropdownSelected(step)
-                && validateStepNoCheckboxRadioSelected(step)
-            );
+            var valid = validateStepNoInputEmpty(step);
+            valid = validateStepNoDropdownSelected(step) && valid;
+            valid = validateStepNoCheckboxRadioSelected(step) && valid;
+            return valid;
         }
 
         function validateDocumentsUpload() {
             var step = $('#step-4').first();
-            return (
-                validateStepNoInputEmpty(step)
-                && validateStepNoDropdownSelected(step)
-                && validateStepNoCheckboxRadioSelected(step)
-            );
+            var valid = validateStepNoInputEmpty(step);
+            valid = validateStepNoDropdownSelected(step) && valid;
+            valid = validateStepNoCheckboxRadioSelected(step) && valid;
+            return valid;
         }
 
         function showError() {
@@ -709,7 +709,6 @@ include "configuracion.php"
                     return;
                 }
 
-                debugger;
                 try {
                     currentStep = steps[steps.indexOf(currentStep) + 1]
                 } catch (err) {
@@ -781,10 +780,46 @@ include "configuracion.php"
     </script>
     <!--End este es el JS de el Stepper-->
 
+    <!--Cargar Marcas / Modelos-->
+    <script type="text/javascript">
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        var makes = [];
+        var models = [];
+        var apiUrl = "http://localhost/api";
+        var selectedMake = 'Honda';
+        var selectedModel = 'Civic';
+
+        function loadVehicleMakes() {
+            var url = apiUrl + "/vehicle/makes";
+            $.get(url, function (response) {
+                makes = response.data;
+                $.each(makes, function(i, d) {
+                    // You will need to alter the below to get the right values from your json object.  Guessing that d.id / d.modelName are columns in your carModels data
+                    $('#validationSelectMaker').append('<option value="' + d + '">' + d + '</option>');
+                });
+            });
+        }
+
+        function loadVehicleModels() {
+            var url = apiUrl + "/vehicle/" + selectedMake + "/models";
+            $.get(url, function (response) {
+                models = response.data;
+                $.each(models, function(i, d) {
+                    // You will need to alter the below to get the right values from your json object.  Guessing that d.id / d.modelName are columns in your carModels data
+                    $('#validationSelectModel').append('<option value="' + d + '">' + d + '</option>');
+                });
+            });
+        }
+
+        (function () {
+            'use strict'
+            loadVehicleMakes();
+            loadVehicleModels();
+        })();
+    </script>
 
     <!--Este es el JS para la Validacion-->
     <script type="text/javascript">
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function () {
             'use strict'
 
