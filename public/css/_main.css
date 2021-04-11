@@ -1,0 +1,3037 @@
+@font-face
+{
+  font-family: Cinzel;
+  src: url("<?= HOST.'assets/fonts/Cinzel-Bold.ttf'; ?>");
+}
+
+/******************general-styles************************/
+
+/*body
+{
+    background: #4e5b72;
+}*/
+
+.fileUpload {
+  position: relative;
+  overflow: hidden;
+  background: none;
+  border:none;
+  padding-top:2px;
+  padding-bottom: 2px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  float:left;
+}
+.fileUpload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  float:left;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+        #uploadFile {
+        height: 29px;
+}
+
+#button-upload {
+  padding: 5px 10px;
+}
+
+.App
+{
+    width: 100%;
+    min-width: 380px;
+    max-width: 2080px;
+    min-height: 100%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.Component
+{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+.LoadingScheme .OuterCircle
+{
+    border-color: #e6e6e5;
+}
+
+.LoadingScheme .OuterCircle .InnerCircle
+{
+    border-color: #1c7bbc;
+}
+
+.LoadingScheme h2
+{
+    color: #dca11b;
+    font-family: Montserrat;
+    letter-spacing: 1px;
+}
+
+
+/*****************header-styles***************/
+
+header.Main
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    font-family: Oswald;
+}
+
+header.Main .Top
+{
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 90px;
+}
+
+header.Main .Top .CommonArea
+{
+    height: 100%;
+    overflow: hidden;
+}
+
+header.Main .Top .LogoWrapper
+{
+    width: 380px;
+    height: 100%;
+    float: left;
+}
+
+header.Main .Top .LogoWrapper img
+{
+    max-width: 100%;
+    /*height: 100%;*/
+    background-image: url("<?= HOST.IMAGES_DIR."Metro-Home-logo.png"; ?>");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 20px;
+}
+
+header.Main .Top .MenuSection
+{
+    width: auto;
+    height: 100%;
+    overflow: hidden;
+}
+
+header.Main .Top .MenuSection .DesktopMenu, header.Main .Top .MenuSection .MobileMenuSection
+{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+header.Main .Top .MenuSection .MobileMenuSection button
+{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ce3225;
+    transform: translateY(-50%);
+    background: transparent;
+    transition: all 0.8s;
+}
+
+header.Main .Top .MenuSection .MobileMenuSection button:before, header.Main .Top .MenuSection .MobileMenuSection button:after
+{
+    content: "";
+    width: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.8s;
+}
+
+header.Main .Top .MenuSection .MobileMenuSection button:before
+{
+    height: 20px;
+    border: 1px solid #e62819;
+    border-width: 4px 0;
+}
+
+header.Main .Top .MenuSection .MobileMenuSection button:after
+{
+    height: 4px;
+    background: #e62819;
+}
+
+header.Main .Top .MenuSection .MobileMenuSection button.Actived:before
+{
+    height: 0px;
+    border: 1px solid #e62819;
+    border-width: 3px 0;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    border-radius: 10px;
+}
+
+header.Main .Top .MenuSection .MobileMenuSection button.Actived:after
+{
+    height: 6px;
+    background: #e62819;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border-radius: 4px;
+}
+
+header.Main .Top .MenuSection .DesktopMenu .LanguageSection
+{
+    width: 100%;
+    height: 30px;
+}
+
+header.Main .Top .MenuSection .DesktopMenu .LanguageSection a
+{
+    cursor: pointer;
+}
+
+header.Main .Top .MenuSection .DesktopMenu .MainMenu
+{
+    width: 100%;
+    height: 50px;
+}
+
+header.Main .DesktopMenu .MainMenu ul, header.Main .LanguageSection ul
+{
+    display: inline-block;
+    height: 100%;
+    float: right;
+}
+
+header.Main .DesktopMenu .MainMenu a li
+{
+    text-transform: uppercase;
+    float: left;
+    height: 100%;
+    padding: 0 25px;
+    color: #535353;
+    line-height: 50px;
+}
+
+header.Main .DesktopMenu .MainMenu a li span
+{
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    line-height: 50px;
+    font-size: 1.3em;
+    font-weight: 400;
+    font-family: Oswald;
+}
+
+header.Main .DesktopMenu .MainMenu a li.Actived span
+{
+    border-bottom: 10px solid #e62819;
+}
+
+header.Main .LanguageSection ul a li
+{
+    float: left;
+    height: 100%;
+    line-height: 30px;
+    font-size: 1em;
+    font-weight: 600;
+    font-family: Calibri;
+    padding: 0 10px;
+    color: #484848;
+}
+
+header.Main .LanguageSection ul a li span
+{
+    display: inline-block;
+    border-radius: 5px;
+    padding: 3px 8px;
+    background: #e62819;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.85em;
+}
+
+header.Main .LanguageSection ul a.Actived li
+{
+    color: #535353;
+}
+
+header.Main .DesktopMenu .MainMenu a:last-child li, header.Main .LanguageSection ul a:last-child li
+{
+    padding-right: 0;
+}
+
+header.Main .Viewport, header.Main .Viewport .SlidesWrapper
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+header.Main .Viewport .SlidesWrapper .Slide
+{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header.Main.Mini
+{
+    /*height: 350px;
+    min-height: 400px;*/
+    height: 30px;
+    min-height: 100px;
+}
+
+header.Main.Mini .Viewport
+{
+    display: none;
+}
+
+header.Main#Home #Slide_1
+{
+    background-image: url("<?= HOST.IMAGES_DIR."viewport/Corinthian-Web-banner.png"; ?>");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header.Main.Mini#ContactUs
+{
+    background-image: url("<?= HOST.IMAGES_DIR."viewport/contact-us-viewport.png"; ?>");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header.Main.Mini#AboutUs
+{
+    background-image: url("<?= HOST.IMAGES_DIR."viewport/about-us-viewport.png"; ?>");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*header.Main.Mini#Resources, header.Main.Mini#SignUp
+{
+    background-image: url("<?= HOST.IMAGES_DIR."viewport/resources-viewport.png"; ?>");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header.Main.Mini#NewsAndEvents, header.Main.Mini#LogIn, header.Main.Mini#MyAccount, header.Main.Mini#Gallery, header.Main.Mini#Videos
+{
+    background-image: url("<?= HOST.IMAGES_DIR."viewport/news-and-events-viewport.png"; ?>");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}*/
+
+header.Main .VideoWrapper
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+header.Main .VideoWrapper video
+{
+    position: absolute;
+    z-index: 2;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+header.Main .Panel
+{
+    position: absolute;
+    z-index: 5;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+header.Main .Panel:before
+{
+    /*content: "";*/
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    width: 60px;
+    height: 8px;
+    background: #e62819;
+    transform: translateX(-50%);
+}
+
+header.Main .Panel h3
+{
+    font-family: Calibri;
+    font-size: 3.4em;
+    line-height: 1.2;
+    color: #132e77;
+}
+
+header.Main .Panel p
+{
+    font-family: Calibri;
+    font-size: 2.2em;
+    line-height: 1;
+    font-weight: 600;
+    color: #132e77;
+}
+
+header.Main .Panel a
+{
+    padding: 10px 95px;
+    text-transform: uppercase;
+    background: #dda119;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 40px;
+    letter-spacing: 5px;
+    text-decoration: none;
+}
+
+header.Main.Mini .Panel
+{
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+    bottom: 0%;
+    left: 0;
+    transform: translateY(-50%);
+    text-align: left;
+    font-size: 0.85em;
+}
+
+header.Main .AboutMenu
+{
+    position: absolute;
+    top: 80px;
+    left: 180px;
+    width: 98%;
+    max-width: 380px;
+    z-index: -1;
+    background: #141435F1;
+    padding: 20px;
+    opacity: 0;
+}
+
+header.Main .AboutMenu.Actived
+{
+    opacity: 1;
+    z-index: 20;
+}
+
+header.Main .AboutMenu a
+{
+    text-decoration: none;
+}
+
+header.Main .AboutMenu a li
+{
+    color: #fff;
+    font-weight: 700;
+    padding: 8px 0;
+    border-bottom: 2px solid #4e4e89;
+}
+
+header.Main .AboutMenu a li:hover
+{
+    background: rgba(255,255,255,0.2);
+}
+
+header.Main .AboutMenu a:last-child li
+{
+    border-bottom: 0;
+}
+
+header.Main .MobileMenuFloater
+{
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    z-index: -1;
+    width: 95%;
+    max-width: 350px;
+}
+
+header.Main .MobileMenuFloater ul a
+{
+    text-decoration: none;
+}
+
+header.Main .MobileMenuFloater ul li
+{
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    background: #e62819;
+    color: #fff;
+    padding: 0 15px;
+    border-bottom: 1px dotted #fff;
+    opacity: 0;
+    z-index: -1;
+}
+
+header.Main .MobileMenuFloater ul a:first-child li
+{
+    transform: translate(70%, 20%);
+}
+
+header.Main .MobileMenuFloater ul a:nth-child(2) li
+{
+    transform: translate(-90%, -20%);
+}
+
+header.Main .MobileMenuFloater ul a:nth-child(3) li
+{
+    transform: translate(-120%, 280px);
+}
+
+header.Main .MobileMenuFloater ul a:nth-child(4) li
+{
+    transform: translate(50%, -280px);
+}
+
+header.Main .MobileMenuFloater ul a:nth-child(5) li
+{
+    transform: translate(70px, -70px);
+}
+
+header.Main .MobileMenuFloater ul a:nth-child(6) li
+{
+    transform: translate(-180px, -300px);
+}
+
+header.Main .MobileMenuFloater ul a:last-child li
+{
+    transform: translate(180px, 300px);
+}
+
+header.Main .MobileMenuFloater ul a:nth-child(even) li
+{
+    background: #a2150a;
+}
+
+header.Main .MobileMenuFloater.Actived
+{
+    z-index: 20;
+}
+
+header.Main .MobileMenuFloater.Actived ul a li
+{
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+.MenuContainer
+{
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    z-index: -1;
+}
+
+.MenuContainer.Actived
+{
+    z-index: 10500;
+}
+
+.MenuContainer .CommonArea
+{
+    position: relative;
+}
+
+.MenuContainer .CommonArea .MenuWrapper
+{
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    width: 100%;
+    max-width: 340px;
+    background: rgba(20,32,58,0.85);
+    padding: 40px;
+    border-radius: 14px;
+    border-top-right-radius: 0;
+    opacity: 0;
+}
+
+.MenuContainer.Actived .MenuWrapper
+{
+    top: 0;
+    opacity: 1;
+}
+
+.MenuWrapper .MenuOption
+{
+    display: none;
+    border-bottom: 1px solid #1c7dc1;
+    margin-bottom: 20px;
+}
+
+.MenuWrapper .MenuOption ul
+{
+    overflow: hidden;
+    text-align: center;
+}
+
+.MenuContainer .CommonArea .MenuWrapper .MenuOption ul a li
+{
+    width: 33%;
+    float: left;
+    text-transform: uppercase;
+    font-family: Montserrat;
+    padding: 5px;
+    font-size: 0.9em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.MenuContainer .CommonArea .MenuWrapper .MenuOption.Logged ul a li
+{
+    width: 50%;
+}
+
+.MenuContainer .CommonArea .MenuWrapper ul a li
+{
+    color: #fff;
+    font-family: Baskerville;
+    padding: 10px 0;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.MenuContainer .CommonArea .MenuWrapper ul a.Main li
+{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #1c7dc1;
+}
+
+.MenuContainer .CommonArea .MenuWrapper ul a.Sub li
+{
+    font-style: italic;
+}
+
+.MenuContainer .CommonArea .MenuWrapper ul li a.CommonButton
+{
+    background: #1c7dc1;
+    display: block;
+    margin: 20px 0 35px 0;
+    padding: 12px 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.MenuContainer .CommonArea .MenuWrapper ul a.Actived li
+{
+    color: #e5b64e;
+}
+
+header.Main .DesktopMenu ul
+{
+    float: right;
+    padding-top: 20px;
+}
+
+header.Main .DesktopMenu ul li
+{
+    float: left;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    padding: 0px 10px;
+    color: #005097;
+}
+
+header.Main .DesktopMenu ul a, header.Main .DesktopMenu ul li span
+{
+    text-decoration: none;
+    color: #005097;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+header.Main .DesktopMenu ul li a.LangTriggers span
+{
+    font-style: italic;
+    cursor: pointer;
+}
+
+header.Main .DesktopMenu ul li button.MenuMobile
+{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: 0;
+    border-radius: 14px;
+    background: #14203a;
+}
+
+header.Main .DesktopMenu ul li button.MenuMobile.Actived
+{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    opacity: 0.85;
+}
+
+header.Main .DesktopMenu ul li button.MenuMobile::before, header.Main .DesktopMenu ul li button.MenuMobile::after, header.Main .DesktopMenu ul li button.MenuMobile span
+{
+    width: 50%;
+    height: 4px;
+    background: #fff;
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: all 0.5s;
+}
+
+header.Main .DesktopMenu ul li button.MenuMobile::before
+{
+    top: 30%;
+}
+
+header.Main .DesktopMenu ul li button.MenuMobile.Actived::before
+{
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+
+header.Main .DesktopMenu ul li button.MenuMobile::after
+{
+    top: 70%;
+}
+
+header.Main .DesktopMenu ul li button.MenuMobile.Actived::after
+{
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+}
+
+header.Main .DesktopMenu ul li button.MenuMobile span
+{
+    top: 50%;
+}
+
+header.Main .DesktopMenu ul li button.MenuMobile.Actived span
+{
+    height: 0;
+    opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*****************announcement-section*********************/
+
+.AnnouncementSection
+{
+    position: relative;
+}
+
+.BGround
+{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: #1c7dc1;
+    z-index: 1;
+}
+
+.AnnouncementSection .BGround::before, .AnnouncementSection .BGround::after
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 140px;
+}
+
+.AnnouncementSection .BGround::before
+{
+    left: -140px;
+    background: #1c7dc1;
+}
+
+.AnnouncementSection .BGround::after
+{
+    left: -280px;
+    background: #dda119;
+}
+
+.HalfContainer
+{
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.HalfContainer .LeftSide, .HalfContainer .RightSide
+{
+    width: 50%;
+}
+
+.HalfContainer .LeftSide
+{
+    padding: 5% 0;
+}
+
+.AnnouncementSection .HalfContainer .LeftSide img
+{
+    width: 100%;
+    height: 0;
+    padding-bottom: 64%;
+    background-image: url("<?= HOST.IMAGES_DIR."photos/announcement-background.png"; ?>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.AnnouncementSection .CommonArea .RightSide
+{
+    padding: 10% 5% 8%;
+}
+
+.AnnouncementSection .CommonArea .RightSide p
+{
+    color: #fff;
+    line-height: 1.95;
+}
+
+.AnnouncementSection .CommonArea .RightSide p:first-child
+{
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.AnnouncementSection .CommonArea .RightSide p:last-child
+{
+    font-size: 0.9em;
+    margin-top: 35px;
+}
+
+/********************news-section**********************/
+
+.NewsSection
+{
+    position: relative;
+    line-height: 1.7;
+}
+
+.NewsSection .LeftSide
+{
+    padding: 1% 20px;
+}
+
+.NewsSection h3
+{
+    font-size: 1.2em;
+}
+
+.NewsSection h2
+{
+    font-size: 1.7em;
+    margin-bottom: 20px;
+}
+
+.NewsSection span
+{
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.NewsSection p
+{
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.NewsSection .BGround
+{
+    background: url("<?= HOST.IMAGES_DIR."photos/news-section-background.png"; ?>") no-repeat center top;
+    background-size: cover;
+}
+
+.CommonButton
+{
+    display: inline-block;
+    padding: 15px 50px;
+    border: 0;
+    border-radius: 30px;
+    background: #dda119;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    text-decoration: none;
+    letter-spacing: 3px;
+    margin-top: 55px;
+    cursor: pointer;
+}
+
+.NewsSection .CommonButton
+{
+    margin-top: 25px;
+}
+
+/*******************login-styles**********************/
+
+.LoginSection .Insider
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.LoginSection .Insider .LeftSide, .LoginSection .Insider .RightSide
+{
+    width: 50%;
+    padding: 4% 3%;
+}
+
+.LoginSection .Insider .LeftSide .SignupSection
+{
+    border: 1px solid #e3e3e3;
+    padding: 5%;
+    max-width: 450px;
+    background: #e6e6e5;
+}
+
+.LoginSection .Insider .LeftSide .SignupSection h3, .LoginSection .Insider .RightSide .FormContainer h3
+{
+    font-size: 1.4em;
+}
+
+.LoginSection .Insider .LeftSide .SignupSection h5, .LoginSection .Insider .RightSide .FormContainer h5
+{
+    font-size: 0.95em
+    font-family: Montserrat;
+    margin-bottom: 20px;
+}
+
+.LoginSection .Insider .LeftSide .SignupSection p
+{
+    font-size: 0.9em;
+    margin-bottom: 25px;
+}
+
+.LoginSection .Insider .LeftSide .SignupSection a
+{
+    padding: 10px 20px;
+    border-radius: 5px;
+    background: #1c7dc1;
+    color: #fff;
+    font-size: 0.8em;
+    text-decoration: none;
+}
+
+.LoginSection .Insider .RightSide .FormContainer
+{
+    border: 1px solid #e6e6e5;
+    border-radius: 8px;
+    padding: 5%;
+}
+
+.LoginSection .Insider .RightSide fieldset
+{
+    padding-bottom: 15px;
+}
+
+.LoginSection .Insider .RightSide fieldset span.legend
+{
+    font-size: 0.8em;
+    font-family: Montserrat;
+    color: ;
+    display: block;
+    font-weight: 700;
+}
+
+.LoginSection .Insider .RightSide fieldset input
+{
+    padding: 5px 10px;
+    border: 1px solid #d3d3d3;
+    border-radius: 3px;
+    background: #fcfcfc;
+    width: 100%;
+    height: 38px;
+}
+
+.LoginSection .Insider .RightSide fieldset button
+{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 0;
+    background-image: linear-gradient(to right, #1c7dc1, #0c5b92);
+    color: #fff;
+}
+
+/********************signup-styles**********************/
+
+/*.SignUpContent .Insider
+{
+    padding: 35px 0;
+}*/
+
+.SignUpContent .Insider h2
+{
+    font-size: 1.9em;
+    font-family: Montserrat;
+    margin-bottom: 0px;
+}
+
+.SignUpContent .Insider p
+{
+    margin-bottom: 25px;
+   /* font-size: 0.9em;*/
+    font-family: Montserrat;
+}
+
+.SignUpContent .Insider p a
+{
+    color: #23a1d1;
+    text-decoration: none;
+    font-family: Montserrat;
+}
+
+.SignUpContent .Insider .FormSection h4
+{
+    padding: 7px 0;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 1.05em;
+    font-family: Montserrat;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.SignUpContent .Insider .FormSection fieldset
+{
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+.SignUpContent .Insider .FormSection fieldset span.legend
+{
+    display: inline-block;
+    width: 20%;
+    text-align: right;
+    float: left;
+    padding: 5px 15px;
+    font-family: Montserrat;
+    font-size: 0.85em;
+}
+
+.SignUpContent .Insider .FormSection fieldset .InputContainer
+{
+    width: 82%;
+    float: left;
+}
+
+.SignUpContent .Insider .FormSection fieldset input, .SignUpContent .Insider .FormSection fieldset select
+{
+    /*width: 100%;*/
+    border: 1px solid #ccc;
+    height: 34px;
+    padding: 0 10px;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.075) inset;
+    font-family: Montserrat;
+    background: #fff;
+    font-size: 12px;
+    color: #2C3E50;
+    letter-spacing: 1px;
+}
+
+#signUp_content .SignUpContent .Insider .FormSection fieldset input, .SignUpContent .Insider .FormSection fieldset select
+{
+    width: 100%;
+    border: 1px solid #ccc;
+    height: 34px;
+    padding: 0 10px;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.075) inset;
+    font-family: Montserrat;
+    background: #fff;
+}
+
+.fs-title-2 {
+    font-size: 0.7em;
+    color: #1F5BB2;
+    font-weight: normal;
+    text-align: left;
+}
+.fs-title-3 {
+    font-size: 0.7em;
+    font-weight: normal;
+    text-align: left;
+    color: #000000;
+}
+
+.label_agree{
+    color: #000000;
+
+}
+
+.SignUpContent .Insider .FormSection fieldset.SubmitField
+{
+    text-align: right;
+}
+
+.SignUpContent .Insider .FormSection fieldset.SubmitField button
+{
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, #1c7dc1, #0c5b92);
+    border: 0;
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 0.9em;
+}
+
+.SignUpContent .Insider .FormSection fieldset.NextField
+{
+    text-align: right;
+}
+
+.SignUpContent .Insider .FormSection fieldset.NextField button
+{
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, #1c7dc1, #0c5b92);
+    border: 0;
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 0.9em;
+}
+
+/******************video-player-styles********************/
+
+.VideoWrapper
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+    transition: 0s;
+    opacity: 0;
+}
+
+.VideoWrapper.Actived
+{
+    opacity: 1;
+    z-index: 10000000000;
+}
+
+.VideoWrapper .Insider
+{
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+    padding: 50px;
+}
+
+.VideoWrapper .Insider .Video
+{
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56%;
+}
+
+.VideoWrapper .Video a.CloseButton
+{
+    position: absolute;
+    top: 0%;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    transform: translateY(-120%);
+}
+
+.VideoWrapper .Video a.CloseButton::before, .VideoWrapper .Video a.CloseButton::after
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 3px;
+    border-radius: 3px;
+    background: #fff;
+    content: "";
+}
+
+.VideoWrapper .Video a.CloseButton::before
+{
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.VideoWrapper .Video a.CloseButton::after
+{
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.VideoWrapper .Video iframe
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/*******************videos-styles*******************/
+
+.VideosSection .CommonArea .Insider
+{
+    padding: 4% 0;
+}
+
+.VideosSection .CommonArea .Insider h2
+{
+    font-family: Montserrat;
+    font-size: 1.5em;
+    color: #132e77;
+    margin-bottom: 25px;
+}
+
+.VideosSection .CommonArea .Insider .VideosWrapper
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.VideosSection .CommonArea .Insider .VideosWrapper .VideoItem
+{
+    width: 24%;
+    padding: 1% 1.5%;
+    cursor: pointer;
+}
+
+.VideosSection .CommonArea .Insider .VideosWrapper .VideoItem:hover
+{
+    background: #fafafa;
+}
+
+.VideosSection .CommonArea .Insider .VideosWrapper .VideoItem img
+{
+    width: 100%;
+}
+
+.VideosSection .CommonArea .Insider .VideosWrapper .VideoItem:hover img
+{
+    opacity: 0.85;
+}
+
+.VideosSection .CommonArea .Insider .VideosWrapper .VideoItem h3
+{
+    font-family: Montserrat;
+    color: #132e77;
+    font-size: 0.9em;
+}
+
+/******************myaccount-done-styles********************/
+
+.AccountMessage .Insider
+{
+    padding: 75px 0;
+}
+
+.AccountMessage .Insider h2
+{
+    font-size: 1.5em;
+    font-weight: 600;
+    font-family: Montserrat;
+    margin-bottom: 20px;
+}
+
+.AccountMessage .Insider p
+{
+    font-size: 0.95em;
+    font-family: Montserrat;
+    margin-bottom: 15px;
+}
+
+.AccountMessage .Insider p b
+{
+    font-family: Montserrat;
+}
+
+.AccountMessage .Insider a
+{
+    padding: 10px 25px;
+    border: 0;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, #1c7dc1, #0c5b92);
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    font-family: Montserrat;
+}
+
+/*******************contactus-styles********************/
+
+.ContactUsSection .LeftSide, .ContactUsSection .RightSide
+{
+    padding: 5% 3%;
+}
+
+.ContactUsSection .LeftSide p.Info
+{
+    font-size: 1.4em;
+    font-family: Montserrat;
+    font-weight: bold;
+    color: #132e77;
+    margin-bottom: 30px;
+}
+
+.ContactUsSection .LeftSide h3
+{
+    font-size: 2.1em;
+    font-family: Montserrat;
+    font-weight: bold;
+    color: #1c7dc1;
+    margin-bottom: 30px;
+}
+
+.ContactUsSection .LeftSide img
+{
+    display: inline-block;
+    width: 125px;
+    height: 125px;
+    background: url("<?= HOST.IMAGES_DIR."Metro-Home-icon.png" ?>") no-repeat center;
+    margin-top: 120px;
+}
+
+.ContactUsSection .LeftSide p.Lema
+{
+    max-width: 380px;
+}
+
+.ContactUsSection .LeftSide p span
+{
+    font-family: Montserrat;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #dda119;
+    display: block;
+}
+
+.ContactUsSection .RightSide p
+{
+    font-size: 1.2em;
+    color: #676767;
+    margin-bottom: 30px;
+    font-family: Montserrat;
+    font-weight: bold;
+}
+
+.ContactUsSection .RightSide .FormWrapper fieldset
+{
+    padding: 10px 0;
+}
+
+.ContactUsSection .RightSide .FormWrapper fieldset span.legend
+{
+    display: block;
+    font-family: Montserrat;
+    color: #132e77;
+    font-weight: bold;
+}
+
+.ContactUsSection .RightSide .FormWrapper fieldset span.legend sup
+{
+    font-size: 0.95em;
+    color: #132e77;
+}
+
+.ContactUsSection .RightSide .FormWrapper fieldset input, .ContactUsSection .RightSide .FormWrapper fieldset select
+{
+    width: 100%;
+    border: 1px solid #cccbcb;
+    border-radius: 10px;
+    padding: 5px 10px;
+    height: 44px;
+    font-family: Montserrat !important;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05) inset;
+    background: #fff;
+}
+
+.ContactUsSection .RightSide .FormWrapper fieldset button
+{
+    padding: 14px;
+    border-radius: 30px;
+    border: 0;
+    width: 100%;
+    text-transform: uppercase;
+    background: #dda119;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 1.05em;
+    cursor: pointer;
+}
+
+/*********************aboutus-styles**********************/
+
+.AboutUsSection
+{
+    position: relative;
+}
+
+.AboutUsSection .CommonArea .Insider
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.AboutUsSection .CommonArea .LeftSide
+{
+    width: 60%;
+    padding: 5% 3% 5% 0;
+}
+
+.AboutUsSection .CommonArea .LeftSide p
+{
+    color: #14203a;
+    font-family: Baskerville;
+    line-height: 1.8;
+}
+
+.AboutUsSection .CommonArea .LeftSide p.Mini
+{
+    font-size: 1.15em;
+    margin-bottom: 45px;
+}
+
+.AboutUsSection .CommonArea .LeftSide p.Super
+{
+    font-size: 1.55em;
+    margin-bottom: 45px;
+}
+
+.AboutUsSection .CommonArea .LeftSide a
+{
+    font-size: 1.1em;
+    padding: 15px;
+    border-radius: 50px;
+    border: 0;
+    display: inline-block;
+    background: #1c7dc1;
+    color: #fff;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.AboutUsSection .CommonArea .RightSide
+{
+    position: relative;
+    width: 40%;
+}
+
+.AboutUsSection .CommonArea .RightSide .Column
+{
+    position: absolute;
+    width: 85%;
+    height: 200%;
+    background: #dda119;
+    bottom: 0;
+    left: 0;
+}
+
+.AboutUsSection .CommonArea .RightSide .Column .Floater
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.AboutUsSection .CommonArea .RightSide .Column .Floater p
+{
+    font-size: 1.4em;
+    font-style: italic;
+    color: #132e77;
+    font-family: Baskerville;
+    padding: 17% 10% 25% 10%;
+}
+
+.AboutUsSection .CommonArea .RightSide .Column .Floater .ImageWrapper
+{
+    position: relative;
+    width: 150%;
+    height: 0;
+    padding-bottom: 120%;
+}
+
+.AboutUsSection .CommonArea .RightSide .Column .Floater .ImageWrapper img
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("<?= HOST.IMAGES_DIR."photos/news-section-background.png"; ?>") no-repeat left center;
+    background-size: cover;
+}
+
+.BoardSection
+{
+    background: url("<?= HOST.IMAGES_DIR."background/corinthian-team-background.jpg" ?>") no-repeat;
+    background-size: cover;
+    padding: 100px 0;
+}
+
+.BoardSection .CommonArea
+{
+    padding: 0 40px;
+}
+
+.BoardSection .Insider h2.Title
+{
+    font-size: 2.4em;
+    font-weight: 700;
+    font-family: Montserrat;
+    color: #fff;
+}
+
+.BoardSection .Insider h5.SubTitle
+{
+    font-size: 1.2em;
+    font-weight: 700;
+    font-family: Montserrat;
+    color: #fff;
+    margin-bottom: 50px;
+}
+
+.BoardSection .Insider .TeamHolder
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.BoardSection .Insider .TeamHolder .TeamItem
+{
+    position: relative;
+    width: 21%;
+    height: 0;
+    padding-bottom: 21%;
+    margin-bottom: 3%;
+}
+
+.BoardSection .Insider .TeamHolder .TeamItem img
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.BoardSection .Insider .TeamHolder .TeamItem .Floater
+{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+}
+
+.BoardSection .Insider .TeamHolder .TeamItem .Floater h3, .BoardSection .Insider .TeamHolder .TeamItem .Floater h5
+{
+    color: #fff;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+.BoardSection .Insider .TeamHolder .TeamItem .Floater h3
+{
+    font-size: 1.6em;
+}
+
+.LetterSection
+{
+    padding: 50px 0;
+}
+
+.LetterSection .Insider p
+{
+    display: block;
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #14203a;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+/*********************resources-styles******************/
+
+.ResourcesSection
+{
+    padding: 50px 0;
+}
+
+.ResourcesSection .CommonArea
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ResourcesSection .CommonArea .ResourceItem
+{
+    padding: 5% 3%;
+    width: 33%;
+    text-align: center;
+}
+
+.ResourcesSection .CommonArea .ResourceItem .ImageWrapper
+{
+    width: 70%;
+    margin: 0 auto 10px;
+    max-width: 180px;
+}
+
+.ResourcesSection .CommonArea .ResourceItem img
+{
+    width: 100%;
+    height: 0;
+    padding-bottom: 110%;
+    text-align: center;
+    background: url("<?= HOST.IMAGES_DIR."pdf-icon.png" ?>") no-repeat center;
+    background-size: contain;
+}
+
+.ResourcesSection .CommonArea .ResourceItem h3 a
+{
+    font-family: Montserrat;
+    color: #132e77;
+    font-size: 1.7em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.ResourcesSection .CommonArea .ResourceItem a.CommonButton
+{
+    margin-top: 10px;
+}
+
+/*******************myaccount-styles*******************/
+
+.MyAccountSection
+{
+    padding: 4% 0 3%;
+    text-align: center;
+}
+
+.MyAccountSection .Insider .LeftSide, .MyAccountSection .Insider .RightSide
+{
+    padding: 0;
+}
+
+.MyAccountSection .Insider .Panel
+{
+    padding-bottom: 7%;
+}
+
+.MyAccountSection .Insider h2
+{
+    padding: 10px 0;
+    font-size: 1.4em;
+    font-family: Montserrat;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.MyAccountSection .Insider  .Icons
+{
+    font-size: 5.8em;
+    color: #d2d2d2;
+}
+
+.MyAccountSection .Insider ul
+{
+    width: 100%;
+    padding: 20px 0;
+}
+
+.MyAccountSection .Insider ul li
+{
+    display: block;
+    padding: 2px 0;
+}
+
+.MyAccountSection .Insider ul li a
+{
+    font-family: Montserrat;
+    color: #23a1d1;
+    font-size: 0.95em;
+    text-decoration: none;
+}
+
+.MyAccountSection .Bottom
+{
+    position: relative;
+    padding: 2% 0;
+}
+
+.MyAccountSection .Bottom::before
+{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, #e3e3e3, transparent);
+    transform: translateX(-50%);
+}
+
+.MyAccountSection .Bottom a.LogOut
+{
+    display: inline-block;
+    padding: 10px;
+    width: 100%;
+    max-width: 150px;
+    border-radius: 10px;
+    border: 0;
+    background-image: linear-gradient(to right, #1c7dc1, #0c5b92);
+    text-align: center;
+    color: #fff;
+    font-family: Montserrat;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+/*******************gallery-item-styles**********************/
+
+.GallerySection
+{
+    padding: 50px 0;
+}
+
+.GallerySection .Insider h2
+{
+    font-family: Montserrat;
+    font-size: 1.5em;
+}
+
+.GallerySection .Insider span.Sub
+{
+    font-family: Montserrat;
+    font-size: 0.95em;
+    color: #969696;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.GallerySection .CommonArea .GalleryWrapper
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.GallerySection .CommonArea .GalleryWrapper .NewsItem
+{
+    padding: 2% 3%;
+    width: 33%;
+}
+
+.GallerySection .CommonArea .NewsItem .ImageWrapper
+{
+    width: 100%;
+}
+
+.GallerySection .CommonArea .NewsItem img
+{
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 70%;
+    text-align: center;
+    background: url("<?= HOST.IMAGES_DIR."news-events-photo.png" ?>") no-repeat center;
+    background-size: cover;
+}
+
+.GallerySection .CommonArea .NewsItem .Loading::before
+{
+    content: "";
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 4px solid #dca11b;
+    border-radius: 50%;
+    border-right: 0;
+    border-bottom: 0;
+    animation: RotatingCircles 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.GallerySection .CommonArea .NewsItem .Loading img
+{
+    opacity: 0;
+}
+
+.GallerySection .CommonArea .NewsItem img:hover
+{
+    opacity: 0.85;
+}
+
+.GallerySection .CommonArea .NewsItem .Loading img:hover
+{
+    opacity: 0;
+}
+
+.GallerySection .CommonArea .NewsItem h3 a
+{
+    font-family: Montserrat;
+    color: #0061a9;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.GallerySection .CommonArea .NewsItem a.CommonButton
+{
+    margin-top: 10px;
+}
+
+/*********************gallery-events-styles**************************/
+
+.NewsSection
+{
+    padding: 50px 0;
+}
+
+.NewsSection .CommonArea
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.NewsSection .CommonArea .NewsItem
+{
+    padding: 2% 3%;
+    width: 33%;
+}
+
+.NewsSection .CommonArea .NewsItem .ImageWrapper
+{
+    width: 100%;
+}
+
+.NewsSection .CommonArea .NewsItem img
+{
+    width: 100%;
+    height: 0;
+    padding-bottom: 70%;
+    text-align: center;
+    background: url("<?= HOST.IMAGES_DIR."news-events-photo.png" ?>") no-repeat center;
+    background-size: cover;
+}
+
+.NewsSection .CommonArea .NewsItem img:hover
+{
+    opacity: 0.85;
+}
+
+.NewsSection .CommonArea .NewsItem h3 a
+{
+    font-family: Montserrat;
+    color: #0061a9;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.NewsSection .CommonArea .NewsItem a.CommonButton
+{
+    margin-top: 10px;
+}
+
+.NewsEventsSection
+{
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 64%;
+    background: url("<?= HOST.IMAGES_DIR."background/news-and-events-banner.png"; ?>") no-repeat center;
+    background-size: cover;
+}
+
+.NewsEventsSection .CommonArea
+{
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.NewsEventsSection .CommonArea .AdContent
+{
+    position: absolute;
+    top: 15%;
+    right: 15%;
+    text-transform: uppercase;
+}
+
+.NewsEventsSection .CommonArea .AdContent img
+{
+    width: 280px;
+    height: 100px;
+    background: url("<?= HOST.IMAGES_DIR."Metro-Home-logo.png" ?>") no-repeat center;
+    background-size: contain;
+    display: block;
+}
+
+.NewsEventsSection .CommonArea .AdContent span.Lema
+{
+    font-family: Baskerville;
+    font-size: 1.2em;
+    font-style: italic;
+    text-transform: none;
+    font-weight: 600;
+    margin-bottom: 40px;
+    display: inline-block;
+}
+
+.NewsEventsSection .CommonArea .AdContent h2, .NewsEventsSection .CommonArea .AdContent h4, .NewsEventsSection .CommonArea .AdContent span.Date
+{
+    font-family: bebas-neue, sans-serif;
+    font-weight: 400;
+    color: #4d4e4e;
+}
+
+.NewsEventsSection .CommonArea .AdContent h2
+{
+    font-size: 3.8em;
+    color: #214289;
+    line-height: 1;
+}
+
+.NewsEventsSection .CommonArea .AdContent h4, .NewsEventsSection .CommonArea .AdContent span.Date
+{
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+}
+
+/********************news-events-styles******************/
+
+.ArticleSection .CommonArea .LeftSide h2, .ArticleSection .CommonArea .LeftSide h4
+{
+    font-family: Montserrat;
+}
+
+.ArticleSection .CommonArea .LeftSide h2
+{
+    color: #132e77;
+    font-size: 1.6em;
+}
+
+.ArticleSection .CommonArea .LeftSide h4
+{
+    color: #808080;
+    font-size: 1.3em;
+    margin-bottom: 45px;
+}
+
+.ArticleSection .CommonArea .LeftSide p
+{
+    margin-bottom: 35px;
+    font-family: Baskerville;
+    font-size: 1.2em;
+    color: #14203a;
+}
+
+.ArticleSection .CommonArea .LeftSide p.Hightlighted
+{
+    font-weight: bold;
+}
+
+.ArticleSection .CommonArea .LeftSide a
+{
+    display: inline-block;
+    width: 100%;
+    max-width: 240px;
+    padding: 10px;
+    background: #dda119;
+    color: #fff;
+    font-family: Baskerville;
+    text-align: center;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.ArticleSection .CommonArea .RightSide
+{
+    padding: 3%;
+    padding-right: 0;
+}
+
+.ArticleSection .CommonArea .RightSide img
+{
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-bottom: 70%;
+    background: url("<?= HOST.IMAGES_DIR."background/article-background.png" ?>") no-repeat center;
+    background-size: cover;
+}
+
+/*********************footer-styles**********************/
+
+.FooterWrapper
+{
+    padding-top: 40px;
+    background: url("<?= HOST.IMAGES_DIR."background/footer-background.png"; ?>") no-repeat;
+    background-size: cover;
+}
+
+.DoctorSection .HalfContainer .LeftSide
+{
+    width: 40%;
+}
+
+.DoctorSection .HalfContainer .RightSide
+{
+    width: 60%;
+    padding: 10% 8%;
+}
+
+.DoctorSection .HalfContainer .RightSide p
+{
+    font-size: 0.95em;
+    line-height: 2;
+    color: #fff;
+}
+
+.DoctorSection .HalfContainer .RightSide p:first-child
+{
+    font-size: 1.5em;
+    margin-bottom: 25px;
+}
+
+.DoctorSection .HalfContainer .LeftSide .DoctorData
+{
+    width: 100%;
+    height: 0;
+    padding-bottom: 83%;
+    display: inline-block;
+    position: relative;
+}
+
+.DoctorSection .HalfContainer .LeftSide .DoctorData img
+{
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: url("<?= HOST.IMAGES_DIR."photos/doctor-photo-tallaj.png" ?>") no-repeat;
+    background-size: cover;
+    border-bottom: 10px solid #1c7dc1;
+}
+
+.DoctorSection .HalfContainer .LeftSide .DoctorData .Description
+{
+    position: absolute;
+    width: 100%;
+    padding: 0 5%;
+    bottom: 8%;
+    text-align: center;
+}
+
+.DoctorSection .HalfContainer .LeftSide .DoctorData .Description h2, .DoctorSection .HalfContainer .LeftSide .DoctorData .Description span
+{
+    color: #fff;
+}
+
+.DoctorSection .HalfContainer .LeftSide .DoctorData .Description h2
+{
+    font-size: 1.7em;
+}
+
+
+footer.Main .HalfContainer .LeftSide
+{
+    background: #e6e6e5;
+    padding: 3% 5%;
+}
+
+footer.Main .HalfContainer .LeftSide ul
+{
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+footer.Main .HalfContainer .LeftSide ul li
+{
+    float: left;
+    width: 50%;
+}
+
+footer.Main .HalfContainer .LeftSide ul li a
+{
+    display: block;
+    font-family: Baskerville;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 15px 0;
+}
+
+footer.Main .HalfContainer .LeftSide ul li a.Main
+{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+footer.Main .HalfContainer .LeftSide ul li a.Sub
+{
+    font-style: italic;
+}
+
+footer.Main .HalfContainer .LeftSide img
+{
+    width: 80%;
+    height: 0;
+    padding-bottom: 24%;
+    background: url("<?= HOST.IMAGES_DIR."Metro-Home-logo.png"; ?>") no-repeat;
+    background-size: contain;
+}
+
+footer.Main .HalfContainer .RightSide
+{
+    position: relative;
+    background: #1c7dc1;
+    padding: 3% 5%;
+}
+
+footer.Main .HalfContainer .RightSide .TopRight
+{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+footer.Main .HalfContainer .RightSide .TopRight .CallSection, footer.Main .HalfContainer .RightSide .TopRight .RequestSection
+{
+    width: 50%;
+}
+
+footer.Main .HalfContainer .RightSide .TopRight .RequestSection a.CommonButton
+{
+    margin-top: 0;
+    font-weight: bold;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+footer.Main .HalfContainer .RightSide .CallSection a, footer.Main .HalfContainer .RightSide .CallSection span
+{
+    font-family: Montserrat;
+    font-weight: bold;
+    display: block;
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 1.3;
+}
+
+footer.Main .HalfContainer .RightSide .CallSection a
+{
+    font-size: 1.5em;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+footer.Main .HalfContainer .RightSide .BottomRight
+{
+    position: absolute;
+    bottom: 10%;
+    max-width: 380px;
+    letter-spacing: 2px;
+}
+
+footer.Main .HalfContainer .RightSide .BottomRight p span
+{
+    font-family: Montserrat;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #dda119;
+    display: block;
+}
+
+footer.Main .BottomBar
+{
+    padding: 30px 0;
+    font-size: 0.9em;
+    background: #dda119;
+    color: #333333;
+}
+
+footer.Main .BottomBar .CommonArea
+{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+footer.Main .BottomBar p, footer.Main .BottomBar p a
+{
+    font-family: Istok Web;
+    text-decoration: none;
+}
+
+footer.Main .BottomBar ul
+{
+    width: 380px;
+}
+
+footer.Main .BottomBar ul li
+{
+    position: relative;
+    padding-right: 20px;
+    float: left;
+}
+
+footer.Main .BottomBar ul li a
+{
+    text-decoration: none;
+    font-family: Istok Web;
+}
+
+footer.Main .BottomBar ul li::before
+{
+    content: "|";
+    position: absolute;
+    right: 10px;
+}
+
+footer.Main .BottomBar ul li:last-child::before
+{
+    content: none;
+}
+
+footer.Main .BottomBar p
+{
+    text-align: right;
+    width: 100%;
+}
+
+footer.Main .BottomBar p a
+{
+    font-weight: 700;
+    color: #214289;
+}
+
+footer.Main .CommonArea.HalfContainer
+{
+    padding: 0;
+}
+
+
+/***********************media-styles************************/
+
+@media screen and (max-width: 1380px)
+{
+    .DoctorSection .HalfContainer .RightSide
+    {
+        padding: 8% 6%;
+    }
+
+    .DoctorSection
+    {
+        background: url("<?= HOST.IMAGES_DIR."background/footer-background.png"; ?>") no-repeat;
+        background-size: cover;
+    }
+
+    .SignUpContent .Insider
+    {
+        padding: 35px;
+    }
+
+    .AccountMessage .Insider
+    {
+        padding: 35px 20px;
+        font-size: 0.9em;
+    }
+
+    .FooterWrapper
+    {
+        padding-top: 0;
+    }
+
+    .ContactUsSection
+    {
+        font-size: 0.9em;
+    }
+
+    .AboutUsSection
+    {
+        font-size: 0.95em;
+    }
+
+    .AboutUsSection .CommonArea .LeftSide
+    {
+        padding: 3%;
+    }
+
+    header#AboutUs.Main.Mini .Panel
+    {
+        width: 60%;
+        transform: translateY(-20%);
+    }
+
+    header#AboutUs.Main .Panel p
+    {
+        line-height: 1.3;
+    }
+}
+
+@media screen and (max-width: 1350px)
+{
+    .AnnouncementSection
+    {
+        font-size: 0.9em;
+    }
+
+    .AnnouncementSection .CommonArea .RightSide
+    {
+        padding: 7% 5% 5%;
+    }
+}
+
+@media screen and (max-width: 1300px)
+{
+    .BoardSection .Insider .TeamHolder .TeamItem
+    {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 1180px)
+{
+    header.Main .Panel
+    {
+        width: 90%;
+        font-size: 0.95em;
+    }
+
+    .LoginSection .Insider .LeftSide
+    {
+        width: 45%;
+    }
+
+    .LoginSection .Insider .RightSide
+    {
+        width: 55%;
+    }
+
+    .SignUpContent .Insider
+    {
+        font-size: 0.9em;
+    }
+
+    .ContactUsSection
+    {
+        font-size: 0.8em;
+    }
+
+    .ArticleSection
+    {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 1160px)
+{
+    footer.Main
+    {
+        font-size: 0.9em;
+    }
+
+    footer.Main .HalfContainer .RightSide .TopRight
+    {
+        flex-wrap: wrap;
+    }
+
+    footer.Main .HalfContainer .RightSide .TopRight .CallSection, footer.Main .HalfContainer .RightSide .TopRight .RequestSection
+    {
+        width: 100%;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    footer.Main .HalfContainer .RightSide .CallSection a, footer.Main .HalfContainer .RightSide .CallSection span
+    {
+        line-height: 1.4;
+    }
+
+    footer.Main .HalfContainer .RightSide .TopRight .RequestSection a.CommonButton
+    {
+        margin-top: 20px;
+    }
+
+    footer.Main .HalfContainer .RightSide .BottomRight
+    {
+        max-width: 80%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1100px)
+{
+    .AnnouncementSection .CommonArea .RightSide p:first-child
+    {
+        font-size: 1.2em;
+    }
+
+    .AnnouncementSection .CommonArea .RightSide
+    {
+        padding: 5%;
+    }
+
+    .AnnouncementSection .CommonArea .RightSide p:last-child
+    {
+        margin-top: 15px;
+    }
+
+    .BoardSection .Insider .TeamHolder .TeamItem
+    {
+        width: 29%;
+        padding-bottom: 29%;
+    }
+}
+
+@media screen and (max-width: 1080px)
+{
+    .NewsSection
+    {
+        font-size: 0.9em;
+    }
+
+    .DoctorSection
+    {
+        font-size: 0.9em;
+    }
+
+    .DoctorSection .HalfContainer .RightSide p
+    {
+        font-size: 0.85em;
+    }
+
+    .SignUpContent .Insider .FormSection fieldset span.legend, .SignUpContent .Insider .FormSection fieldset .InputContainer
+    {
+        width: 100%;
+        float: none;
+    }
+
+    .SignUpContent .Insider .FormSection fieldset span.legend
+    {
+        text-align: left;
+        padding-left: 0;
+    }
+
+    .SignUpContent .Insider .FormSection fieldset
+    {
+        padding: 10px 25px;
+    }
+
+    .ContactUsSection .LeftSide img
+    {
+        margin-top: 60px;
+    }
+
+    .VideosSection .CommonArea .Insider .VideosWrapper .VideoItem
+    {
+        width: 32%;
+    }
+}
+
+@media screen and (max-width: 1000px)
+{
+    .AboutUsSection
+    {
+        font-size: 0.9em;
+        overflow: hidden;
+    }
+
+    header#AboutUs.Main.Mini .Panel
+    {
+        width: 100%;
+        transform: translateY(-50%);
+    }
+
+    header#AboutUs.Main .Panel p
+    {
+        line-height: 1;
+    }
+
+    .ArticleSection
+    {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 980px)
+{
+    footer.Main .HalfContainer .LeftSide
+    {
+
+        text-align: center;
+    }
+
+    footer.Main .HalfContainer .LeftSide ul li
+    {
+        width: 100%;
+        float: none;
+    }
+}
+
+@media screen and (max-width: 950px)
+{
+    .DoctorSection .HalfContainer .RightSide p:first-child
+    {
+        font-size: 1.3em;
+    }
+
+    .NewsEventsSection .CommonArea .AdContent
+    {
+        top: 10%;
+        right: 5%;
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 900px)
+{
+    header.Main .Panel
+    {
+        font-size: 0.65em;
+    }
+
+    .NewsSection .BGround
+    {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 50%;
+    }
+
+    .NewsSection .LeftSide
+    {
+        width: 100%;
+    }
+
+    .NewsSection .RightSide
+    {
+        width: 0%;
+    }
+
+    header.Main.Mini .Panel
+    {
+        font-size: 0.75em;
+    }
+
+    .LoginSection .Insider
+    {
+        font-size: 0.85em;
+    }
+
+    .ContactUsSection
+    {
+        font-size: 0.75em;
+    }
+
+    .AboutUsSection
+    {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 880px)
+{
+    .BoardSection .Insider .TeamHolder
+    {
+        justify-content: space-around;
+    }
+
+    .BoardSection .Insider .TeamHolder .TeamItem
+    {
+        width: 41%;
+        padding-bottom: 41%;
+    }
+}
+
+@media screen and (max-width: 850px)
+{
+    .AnnouncementSection .CommonArea .RightSide, .AnnouncementSection .CommonArea .LeftSide
+    {
+        width: 100%;
+    }
+
+    .AnnouncementSection .CommonArea .LeftSide
+    {
+        text-align: center;
+    }
+
+    .AnnouncementSection .CommonArea .LeftSide img
+    {
+        width: 64%;
+        padding-bottom: 40%;
+    }
+
+    .AnnouncementSection .CommonArea .RightSide
+    {
+        padding-top: 0;
+    }
+
+    .AnnouncementSection .CommonArea .RightSide .Insider
+    {
+        padding-left: 20%;
+    }
+}
+
+@media screen and (max-width: 800px)
+{
+    header.Main .DesktopMenu ul li
+    {
+        display: none;
+    }
+
+    header.Main .DesktopMenu ul li:last-child
+    {
+        display: block;
+    }
+
+    .MenuWrapper .MenuOption
+    {
+        display: block;
+    }
+
+    .LetterSection
+    {
+        font-size: 0.9em;
+    }
+
+    .ResourcesSection .CommonArea
+    {
+        font-size: 0.8em;
+    }
+
+    .ResourcesSection .CommonArea .ResourceItem
+    {
+        width: 50%;
+    }
+
+    .GallerySection .CommonArea
+    {
+        font-size: 0.8em;
+    }
+
+    .GallerySection .CommonArea .GalleryWrapper .NewsItem
+    {
+        width: 50%;
+    }
+
+    .NewsSection .CommonArea
+    {
+        font-size: 0.8em;
+    }
+
+    .NewsSection .CommonArea .NewsItem
+    {
+        width: 50%;
+    }
+
+    .NewsEventsSection .CommonArea .AdContent
+    {
+        top: 10%;
+        right: 5%;
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 780px)
+{
+    footer.Main .BottomBar .CommonArea
+    {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    footer.Main .BottomBar ul
+    {
+        width: auto;
+        margin: auto;
+        float: none;
+    }
+
+    footer.Main .BottomBar ul li::before
+    {
+        right: 7px;
+    }
+
+    footer.Main .BottomBar p
+    {
+        width: 100%;
+        float: none;
+        text-align: center;
+    }
+
+    header.Main.Mini .Panel
+    {
+        font-size: 0.55em;
+    }
+}
+
+@media screen and (max-width: 750px)
+{
+    .DoctorSection .HalfContainer .RightSide, .DoctorSection .HalfContainer .LeftSide
+    {
+        width: 100%;
+    }
+
+    .DoctorSection .HalfContainer .LeftSide
+    {
+        text-align: center;
+    }
+
+    .DoctorSection .HalfContainer .LeftSide .DoctorData
+    {
+        width: 60%;
+        height: 0;
+        padding-bottom: 60%;
+        margin: auto;
+    }
+
+    .DoctorSection .HalfContainer .LeftSide .DoctorData img
+    {
+        left: 0;
+    }
+
+    .DoctorSection .HalfContainer .RightSide
+    {
+        padding-top: 0;
+    }
+
+    .DoctorSection .HalfContainer .LeftSide .DoctorData .Description
+    {
+        font-size: 0.9em;
+    }
+
+    .AboutUsSection .CommonArea
+    {
+        padding: 0;
+    }
+
+    .AboutUsSection .Insider .LeftSide
+    {
+        padding: 5%;
+    }
+
+    .AboutUsSection .Insider .LeftSide, .AboutUsSection .Insider .RightSide
+    {
+        width: 100%;
+    }
+
+    .AboutUsSection .Insider .RightSide .Column
+    {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .AboutUsSection .CommonArea .RightSide .Column .Floater
+    {
+        position: relative;
+    }
+
+    .AboutUsSection .CommonArea .RightSide .Column .Floater p
+    {
+        padding: 8%;
+    }
+
+    .AboutUsSection .CommonArea .RightSide .Column .Floater .ImageWrapper
+    {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 60%;
+    }
+
+    .VideosSection .CommonArea .Insider .VideosWrapper .VideoItem
+    {
+        width: 49%;
+    }
+}
+
+@media screen and (max-width: 700px)
+{
+    .LoginSection .Insider .LeftSide, .LoginSection .Insider .RightSide
+    {
+        width: 100%;
+    }
+
+    footer.Main
+    {
+        font-size: 0.8em;
+    }
+
+    .HalfContainer .LeftSide, .HalfContainer .RightSide
+    {
+        width: 100%;
+    }
+
+    footer.Main .HalfContainer .RightSide, footer.Main .HalfContainer .LeftSide
+    {
+        padding: 8% 5%;
+    }
+
+    footer.Main .HalfContainer .RightSide .BottomRight
+    {
+        position: relative;
+        margin-top: 65px;
+        max-width: 100%;
+    }
+
+    footer.Main .BottomBar, footer.Main .HalfContainer .LeftSide ul
+    {
+        font-size: 1.2em;
+    }
+
+    .ContactUsSection .RightSide
+    {
+        border-top: 1px solid #e3e3e3;
+    }
+
+    .ContactUsSection .LeftSide img
+    {
+        margin-top: 30px;
+    }
+
+    .ArticleSection .CommonArea .LeftSide, .ArticleSection .CommonArea .RightSide
+    {
+        width: 100%;
+        padding: 5%;
+    }
+
+    .NewsEventsSection .CommonArea .AdContent
+    {
+        top: 10%;
+        right: 5%;
+        font-size: 0.8em;
+        background: rgba(255, 255, 255, 0.5);
+        padding: 5%;
+    }
+}
+
+@media screen and (max-width: 650px)
+{
+    .BoardSection
+    {
+        padding: 50px 0;
+    }
+
+    .BoardSection .Insider .TeamHolder
+    {
+        justify-content: space-around;
+    }
+
+    .BoardSection .Insider .TeamHolder .TeamItem
+    {
+        width: 95%;
+        padding-bottom: 95%;
+        margin-bottom: 7%;
+    }
+
+    .BoardSection .Insider h2.Title
+    {
+        font-size: 1.7em;
+    }
+
+    .BoardSection .Insider h5.SubTitle
+    {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 620px)
+{
+    .NewsEventsSection
+    {
+        position: relative;
+        padding: 5%;
+        height: auto;
+    }
+
+    .NewsEventsSection .CommonArea
+    {
+        position: relative;
+        height: auto;
+    }
+
+    .NewsEventsSection .CommonArea .AdContent
+    {
+        position: relative;
+        font-size: 0.7em;
+        transform: translate(0,0);
+        right: auto;
+    }
+
+    .NewsEventsSection .CommonArea .AdContent img
+    {
+        width: 70%;
+        height: 0;
+        padding-bottom: 24%;
+    }
+}
+
+@media screen and (max-width: 600px)
+{
+    .AnnouncementSection .BGround
+    {
+        width: 90%;
+    }
+
+    .AnnouncementSection .BGround::before, .AnnouncementSection .BGround::after
+    {
+        width: 5%;
+    }
+
+    .AnnouncementSection .BGround::before
+    {
+        left: -5%;
+    }
+
+    .AnnouncementSection .BGround::after
+    {
+        left: -10%;
+    }
+
+    .AnnouncementSection .CommonArea .RightSide .Insider
+    {
+        padding: 0% 5%;
+    }
+
+    .SignUpContent .Insider
+    {
+        padding: 35px 10px;
+    }
+}
+
+@media screen and (max-width: 550px)
+{
+    .DoctorSection .HalfContainer .LeftSide .DoctorData
+    {
+        width: 80%;
+        padding-bottom: 80%;
+    }
+
+    .DoctorSection .HalfContainer .LeftSide .DoctorData .Description
+    {
+        font-size: 0.8em;
+    }
+
+    .ResourcesSection .CommonArea .ResourceItem
+    {
+        width: 100%;
+    }
+
+    .GallerySection .CommonArea .GalleryWrapper .NewsItem
+    {
+        width: 100%;
+    }
+
+    .NewsSection .CommonArea .NewsItem
+    {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px)
+{
+    header.Main .Top .LogoWrapper
+    {
+        width: 280px;
+        height: 100%;
+        float: left;
+    }
+
+    .NewsEventsSection .CommonArea .AdContent h2
+    {
+        font-size: 3em;
+    }
+
+    .VideosSection .CommonArea .Insider .VideosWrapper .VideoItem
+    {
+        width: 100%;
+    }
+}
