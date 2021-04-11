@@ -651,7 +651,7 @@ include "configuracion.php"
             var valid = validateStepNoInputEmpty(step);
             valid = validateStepNoDropdownSelected(step) && valid;
             valid = validateStepNoCheckboxRadioSelected(step) && valid;
-            return valid || true;
+            return valid;
         }
 
         function validateCarReg() {
