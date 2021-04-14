@@ -104,6 +104,57 @@ include "configuracion.php"
                                                                 <label for="validationState" class="form-label"></label>
                                                                 <select id="validationState" class="form-select" required>
                                                                     <option selected><?php echo $lang['State'] ?></option>
+                                                                    <option value="AL">Alabama</option>
+                                                                    <option value="AK">Alaska</option>
+                                                                    <option value="AZ">Arizona</option>
+                                                                    <option value="AR">Arkansas</option>
+                                                                    <option value="CA">California</option>
+                                                                    <option value="CO">Colorado</option>
+                                                                    <option value="CT">Connecticut</option>
+                                                                    <option value="DE">Delaware</option>
+                                                                    <option value="DC">District Of Columbia</option>
+                                                                    <option value="FL">Florida</option>
+                                                                    <option value="GA">Georgia</option>
+                                                                    <option value="HI">Hawaii</option>
+                                                                    <option value="ID">Idaho</option>
+                                                                    <option value="IL">Illinois</option>
+                                                                    <option value="IN">Indiana</option>
+                                                                    <option value="IA">Iowa</option>
+                                                                    <option value="KS">Kansas</option>
+                                                                    <option value="KY">Kentucky</option>
+                                                                    <option value="LA">Louisiana</option>
+                                                                    <option value="ME">Maine</option>
+                                                                    <option value="MD">Maryland</option>
+                                                                    <option value="MA">Massachusetts</option>
+                                                                    <option value="MI">Michigan</option>
+                                                                    <option value="MN">Minnesota</option>
+                                                                    <option value="MS">Mississippi</option>
+                                                                    <option value="MO">Missouri</option>
+                                                                    <option value="MT">Montana</option>
+                                                                    <option value="NE">Nebraska</option>
+                                                                    <option value="NV">Nevada</option>
+                                                                    <option value="NH">New Hampshire</option>
+                                                                    <option value="NJ">New Jersey</option>
+                                                                    <option value="NM">New Mexico</option>
+                                                                    <option value="NY">New York</option>
+                                                                    <option value="NC">North Carolina</option>
+                                                                    <option value="ND">North Dakota</option>
+                                                                    <option value="OH">Ohio</option>
+                                                                    <option value="OK">Oklahoma</option>
+                                                                    <option value="OR">Oregon</option>
+                                                                    <option value="PA">Pennsylvania</option>
+                                                                    <option value="RI">Rhode Island</option>
+                                                                    <option value="SC">South Carolina</option>
+                                                                    <option value="SD">South Dakota</option>
+                                                                    <option value="TN">Tennessee</option>
+                                                                    <option value="TX">Texas</option>
+                                                                    <option value="UT">Utah</option>
+                                                                    <option value="VT">Vermont</option>
+                                                                    <option value="VA">Virginia</option>
+                                                                    <option value="WA">Washington</option>
+                                                                    <option value="WV">West Virginia</option>
+                                                                    <option value="WI">Wisconsin</option>
+                                                                    <option value="WY">Wyoming</option>
                                                                 </select>
                                                                 <div class="invalid-feedback">
                                                                     Please select a valid state.
@@ -131,7 +182,7 @@ include "configuracion.php"
                                                         </div>
                                                         <div class="col-md-5">
                                                             <label for="validationEmail" class="form-label"></label>
-                                                            <input type="text" class="form-control" id="validationEmail" placeholder="Email" aria-label="Email" required>
+                                                            <input type="email" class="form-control" id="validationEmail" placeholder="Email" aria-label="Email" required>
                                                             <div class="invalid-feedback">
                                                                 Please choose a Email.
                                                             </div>
@@ -176,7 +227,7 @@ include "configuracion.php"
                                                         </div>
                                                         <div class="col-md-10">
                                                             <label for="validationExpiration" class="form-label"></label>
-                                                            <input type="text" class="form-control" id="validationExpiration" placeholder="TLC Expiration Date MM/DD/YYYY" aria-label="TLC Expiration Date MM/DD/YYYY" required>
+                                                            <input type="date" class="form-control" id="validationExpiration" placeholder="TLC Expiration Date MM/DD/YYYY" aria-label="TLC Expiration Date MM/DD/YYYY" required>
                                                             <div class="invalid-feedback">
                                                                 Please choose a TLC Expiration Date MM/DD/YYYY.
                                                             </div>
@@ -188,21 +239,21 @@ include "configuracion.php"
                                                     <div class="row">
                                                         <div class="col-md-10">
                                                             <label for="validationUsername" class="form-label"></label>
-                                                            <input type="text" class="form-control" id="validationUsername" placeholder="Username or email" aria-label="Username or email" required>
+                                                            <input type="email" class="form-control" id="validationUsername" placeholder="Email" aria-label="Username or email" required>
                                                             <div id="validationUsername" class="invalid-feedback">
                                                                 Please choose a username.
                                                             </div>
 
                                                             <div class="col-md-5" style="padding-left: 0px;">
                                                                 <label for="validationPassword" class="form-label"></label>
-                                                                <input type="text" class="form-control" id="validationPassword" placeholder="<?php echo $lang['Password'] ?>" aria-label="Create a password" required>
+                                                                <input type="password" class="form-control" id="validationPassword" placeholder="<?php echo $lang['Password'] ?>" aria-label="Create a password" required>
                                                                 <div id="validationUsername" class="invalid-feedback">
                                                                     Please choose a Create a password.
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-5">
                                                                 <label for="validationConfirmPassword" class="form-label"></label>
-                                                                <input type="text" class="form-control" id="validationConfirmPassword" placeholder="<?php echo $lang['Confirm Password'] ?>" aria-label="Confirm password" required>
+                                                                <input type="password" class="form-control" id="validationConfirmPassword" placeholder="<?php echo $lang['Confirm Password'] ?>" aria-label="Confirm password" required>
                                                                 <div id="validationUsername" class="invalid-feedback">
                                                                     Please choose a Confirm password.
                                                                 </div>
@@ -289,6 +340,46 @@ include "configuracion.php"
                                                             <label for="validationSelectColor" class="form-label"></label>
                                                             <select id="validationSelectColor" class="form-select" required>
                                                                 <option selected><?php echo $lang['Select Color'] ?></option>
+
+                                                                <option value="526">Amarillo</option>
+                                                                <option value="516">Azul</option>
+                                                                <option value="529">Azul Agua</option>
+                                                                <option value="518">Azul Cielo</option>
+                                                                <option value="509">Azul claro</option>
+                                                                <option value="520">Azul Marino</option>
+                                                                <option value="513">Azul/Grís</option>
+                                                                <option value="505">Beige</option>
+                                                                <option value="512">Blanco</option>
+                                                                <option value="533">Blanco perla</option>
+                                                                <option value="535">Bronce</option>
+                                                                <option value="527">Champang</option>
+                                                                <option value="502">Crema</option>
+                                                                <option value="501">Dorado</option>
+                                                                <option value="510">Gris</option>
+                                                                <option value="511">Gris oscuro</option>
+                                                                <option value="519">Gris Plata</option>
+                                                                <option value="525">Ladrillo</option>
+                                                                <option value="517">Marrón</option>
+                                                                <option value="521">Morado</option>
+                                                                <option value="531">Morado/Gris</option>
+                                                                <option value="534">Naranja</option>
+                                                                <option value="504">Negro</option>
+                                                                <option value="506">Negro/Crema</option>
+                                                                <option value="507">Negro/Gris</option>
+                                                                <option value="514">Negro/Gris</option>
+                                                                <option value="500">Negro/Rojo</option>
+                                                                <option value="530">Plata</option>
+                                                                <option value="503">Rojo</option>
+                                                                <option value="524">Rojo Esacarlata</option>
+                                                                <option value="528">Rojo Vino</option>
+                                                                <option value="522">Rojo/Dorado</option>
+                                                                <option value="547">Rosado</option>
+                                                                <option value="523">Silver</option>
+                                                                <option value="536">Terracota</option>
+                                                                <option value="515">Verde</option>
+                                                                <option value="532">Verde/Gris</option>
+                                                                <option value="508">Vino</option>
+
                                                             </select>
                                                             <div class="invalid-feedback">
                                                                 Please select a valid Car Color.
@@ -575,19 +666,18 @@ include "configuracion.php"
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet" />
     <!--End este es el js de file upload-->
 
-    <script src="https://cdn.jsdelivr.net/npm/bs-stepper/dist/js/bs-stepper.min.js"></script>
+
+    <!--Boostrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="{{ URL::asset('js/jquery-3.2.1.min_compressed.js') }}"></script>
-{{--    <script type="text/javascript" src="{{ URL::asset('js/stripe_custom.js') }}"></script>--}}
-    <script type="text/javascript" src="{{ URL::asset('js/visible_plugin.js') }}"></script>
-
-
-
+    <!--font-awesome-->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+    <!--Boostrap-->
+
+
 
 
     <!--Este es el JS de el Stepper-->
@@ -782,6 +872,7 @@ include "configuracion.php"
         });
     </script>
     <!--End este es el JS de el Stepper-->
+
 
     <!--Cargar Marcas / Modelos-->
     <script type="text/javascript">

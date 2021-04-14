@@ -8,14 +8,13 @@ body {
 
     h1 {
       font-family:  Montserrat;
-      text-transform: uppercase;
+
     }
 
 
 
     h2 {
       font-size: 24px;
-      text-transform: uppercase;
       color: #303030;
       font-weight: 600;
       margin-bottom: 30px;
@@ -52,6 +51,103 @@ body {
           border: solid 0.5px #00A3E8;
         }
 
+        #signup-p .margin_top-metro{
+            margin-bottom: 45px;
+            margin-top: 45px;
+            font-family: Montserrat;
+            font-weight: normal;
+            color: #000000;
+            font-size: 45px;
+
+            }
+
+
+            /**********************
+            /***** Services *******
+            /*********************/
+            @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+            section{
+                padding: 60px 0;
+            }
+            section .section-title{
+                text-align:center;
+                color:#007b5e;
+                margin-bottom:50px;
+                text-transform:uppercase;
+            }
+            #what-we-do{
+                background:#ffffff;
+            }
+            #what-we-do .card{
+                padding: 1rem!important;
+                border: none;
+                margin-bottom:1rem;
+                -webkit-transition: .5s all ease;
+                -moz-transition: .5s all ease;
+                transition: .5s all ease;
+            }
+            #what-we-do .card:hover{
+                -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+                -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+                box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+            }
+            #what-we-do .card .card-block{
+                padding-left: 50px;
+                position: relative;
+            }
+            #what-we-do .card .card-block a{
+                color: #1F5BB2 !important;
+                font-weight:700;
+                text-decoration:none;
+            }
+            #what-we-do .card .card-block a i{
+                display:none;
+
+            }
+            #what-we-do .card:hover .card-block a i{
+                display:inline-block;
+                font-weight:700;
+
+            }
+            #what-we-do .card .card-block:before{
+                font-family: FontAwesome;
+                position: absolute;
+                font-size: 39px;
+                color: #1F5BB2;
+                left: 0;
+                -webkit-transition: -webkit-transform .2s ease-in-out;
+                transition:transform .2s ease-in-out;
+            }
+            #what-we-do .card .block-1:before{
+                content: "\f0e7";
+            }
+            #what-we-do .card .block-2:before{
+                content: "\f017";
+            }
+            #what-we-do .card .block-3:before{
+                content: "\f00c";
+            }
+
+            #what-we-do .card:hover .card-block:before{
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+                -webkit-transition: .5s all ease;
+                -moz-transition: .5s all ease;
+                transition: .5s all ease;
+            }
+            #what-we-do h3{
+                font-size: 20px;
+                font-family: Montserrat;
+                color: #1F5BB2;
+                font-weight: bold;
+            }
+
+            #what-we-do p{
+                font-family: Montserrat;
+                color: #000000;
+            }
+
+
 
 
         .navbar-default .navbar-toggle:hover {
@@ -59,12 +155,7 @@ body {
         }
 
 
-        .card-title{
-          color: #fff;
-        }
-        .card-title-services{
-          color: #000;
-        }
+
 
         .info-metro-p-2-wh{
           color: #fff;
@@ -897,13 +988,9 @@ body {
 
                 }
 
-              .pdf-color-letter{
-                color: #FE9505;
-              }
 
-               .pdf a:hover, a:active, a:focus{
-                 color: #fff;
-               }
+
+
 
 
               /* ENTERTAINMENT DEALS HOVER CAPTION */
@@ -1683,20 +1770,7 @@ body {
                font-size: 14px;
                line-height: 1.6;
              }
-             .card-body{
-               -ms-flex: 1 1 auto;
-              flex: 1 1 auto;
-              min-height: 1px;
-              padding: 1rem;
-             }
-             .card-title{
-               margin-bottom: 10px;
-               font-size: 10px;
-             }
-             .card-title-services{
-               margin-bottom: 10px;
-               font-size: 10px;
-             }
+
              .border-color{
                min-width: 10rem;
                min-height: 10rem;
@@ -1755,7 +1829,7 @@ body {
                 }
 
                  .navbar {
-                    margin-bottom: 0;
+                    /*margin-bottom: 0;*/
                     background-color: transparent;
                     z-index: 999;
                     border: 0;
@@ -1765,7 +1839,7 @@ body {
                     border-radius: 0;
                     font-family: Montserrat, sans-serif;
                     /*opacity: 0.9;*/
-                    min-height: 105px;
+                    height: 100px;
                     /*background: transparent url("http://127.0.0.1:58624/Image/Boceto305-Home-Logo.png") no-repeat center left;*/
 
                   }
@@ -2218,7 +2292,7 @@ body {
 
                #myNavbar-1{
                  z-index: 1;
-                 margin-top: 216px;
+                 margin-top: 190px;
                  position: fixed;
 
                  }
@@ -2234,7 +2308,7 @@ body {
         }
         #Banner_Servicios.jumbotron-fluid-3 {
           /*background-image: url("https://bocettos305.com/Image/Metro-Home-Banner-02.jpg");*/
-          background-image: url("https://webinconstruction.com/metro2.0/Image/Metro-Home-Banner-03.jpg");
+          background-image: url("../images/Metro-home-DRIVER.jpg");
            background-position: center;
            background-repeat: no-repeat;
            background-size: cover;
@@ -2840,20 +2914,7 @@ body {
                font-size: 14px;
                line-height: 1.6;
              }
-             .card-body{
-               -ms-flex: 1 1 auto;
-              flex: 1 1 auto;
-              min-height: 1px;
-              padding: 1rem;
-             }
-             .card-title{
-               margin-bottom: 10px;
-               font-size: 10px;
-             }
-             .card-title-services{
-               margin-bottom: 10px;
-               font-size: 10px;
-             }
+
              .border-color{
                min-width: 10rem;
                min-height: 10rem;
@@ -2912,7 +2973,7 @@ body {
                 }
 
                  .navbar {
-                    margin-bottom: 0;
+                    /*margin-bottom: 0;*/
                     background-color: transparent;
                     z-index: 999;
                     border: 0;
@@ -2922,7 +2983,7 @@ body {
                     border-radius: 0;
                     font-family: Montserrat, sans-serif;
                     /*opacity: 0.9;*/
-                    min-height: 105px;
+                    height: 100px;
                     /*background: transparent url("http://127.0.0.1:58624/Image/Boceto305-Home-Logo.png") no-repeat center left;*/
 
                   }
@@ -3375,7 +3436,7 @@ body {
 
                #myNavbar-1{
                  z-index: 1;
-                 margin-top: 216px;
+                 margin-top: 190px;
                  position: fixed;
 
                  }
@@ -3391,7 +3452,7 @@ body {
         }
         #Banner_Servicios.jumbotron-fluid-3 {
           /*background-image: url("https://bocettos305.com/Image/Metro-Home-Banner-02.jpg");*/
-          background-image: url("https://webinconstruction.com/metro2.0/Image/Metro-Home-Banner-03.jpg");
+          background-image: url("../images/Metro-home-DRIVER.jpg");
            background-position: center;
            background-repeat: no-repeat;
            background-size: cover;
@@ -4066,7 +4127,7 @@ body {
 
                 }
             .navbar {
-            margin-bottom: 0;
+            /*margin-bottom: 0;*/
             background-color: transparent;
             z-index: 999;
             border: 0;
@@ -4076,7 +4137,7 @@ body {
             border-radius: 0;
             font-family: Montserrat, sans-serif;
             /*opacity: 0.9;*/
-            min-height: 105px;
+            height: 105px;
             /*background: transparent url("http://127.0.0.1:58624/Image/Boceto305-Home-Logo.png") no-repeat center left;*/
 
           }
@@ -4373,7 +4434,7 @@ body {
        }
        #Banner_Servicios.jumbotron-fluid-3 {
           /*background-image: url("https://bocettos305.com/Image/Metro-Home-Banner-02.jpg");*/
-          background-image: url("https://webinconstruction.com/metro2.0/Image/Metro-Home-Banner-03.jpg");
+          background-image: url("../images/Metro-home-DRIVER.jpg");
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
@@ -5136,7 +5197,7 @@ body {
              }
 
              .navbar {
-            margin-bottom: 0;
+            /*margin-bottom: 0;*/
             background-color: transparent;
             z-index: 999;
             border: 0;
@@ -5146,9 +5207,9 @@ body {
             border-radius: 0;
             font-family: Montserrat, sans-serif;
             /*opacity: 0.9;*/
-            min-height: 65px;
+            height: 65px;
             /*background: transparent url("http://127.0.0.1:58624/Image/Boceto305-Home-Logo.png") no-repeat center left;*/
-            margin-top: 36px;
+            /*margin-top: 36px;*/
           }
 
              #ubication p.area-nivel{
@@ -5384,7 +5445,7 @@ body {
         }
         #Banner_Servicios.jumbotron-fluid-3 {
           /*background-image: url("https://bocettos305.com/Image/Metro-Home-Banner-02.jpg");*/
-          background-image: url("https://webinconstruction.com/metro2.0/Image/Metro-Home-Banner-03.jpg");
+          background-image: url("../images/Metro-home-DRIVER.jpg");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -5485,8 +5546,8 @@ body {
         #logo {
           width: 15em;
           transform: scale(1.6);
-          margin-left: 19px;
-          margin-top: 0px;
+            margin-left: 35px;
+            margin-top: -40px;
 
           /*Este es la funcion para que el logo se ponga mas pequeno*/
 
@@ -6202,7 +6263,7 @@ body {
             /*opacity: 0.9;*/
             min-height: 65px;
             /*background: transparent url("http://127.0.0.1:58624/Image/Boceto305-Home-Logo.png") no-repeat center left;*/
-            margin-top: 36px;
+           /* margin-top: 36px;*/
 
           }
 
@@ -6602,7 +6663,7 @@ body {
         }
         #Banner_Servicios.jumbotron-fluid-3 {
           /*background-image: url("https://bocettos305.com/Image/Metro-Home-Banner-02.jpg");*/
-          background-image: url("https://webinconstruction.com/metro2.0/Image/Metro-Home-Banner-03.jpg");
+          background-image: url("../images/Metro-home-DRIVER.jpg");
            background-position: center;
            background-repeat: no-repeat;
            background-size: cover;
@@ -7704,7 +7765,7 @@ body {
        }
        #Banner_Servicios.jumbotron-fluid-3 {
          /*background-image: url("https://bocettos305.com/Image/Metro-Home-Banner-02.jpg");*/
-         background-image: url("https://webinconstruction.com/metro2.0/Image/Metro-Home-Banner-03.jpg");
+         background-image: url("../images/Metro-home-DRIVER.jpg");
           /*up to -ms-filter used to flip background image
           -moz-transform: scaleX(-1);
           -o-transform: scaleX(-1);
@@ -8414,7 +8475,7 @@ body {
             /*opacity: 0.9;*/
             min-height: 65px;
             /*background: transparent url("http://127.0.0.1:58624/Image/Boceto305-Home-Logo.png") no-repeat center left;*/
-            margin-top: 36px;
+            /*margin-top: 36px;*/
           }
 
       .type-contacto {
@@ -8795,7 +8856,7 @@ body {
        }
        #Banner_Servicios.jumbotron-fluid-3 {
          /*background-image: url("https://bocettos305.com/Image/Metro-Home-Banner-02.jpg");*/
-         background-image: url("https://webinconstruction.com/metro2.0/Image/Metro-Home-Banner-03.jpg");
+         background-image: url("../images/Metro-home-DRIVER.jpg");
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
@@ -8858,7 +8919,7 @@ body {
          width: 15em;
          transform: scale(1.6);
          margin-left: 19px;
-         margin-top: 33px;
+         margin-top: 0px;
 
          /*Este es la funcion para que el logo se ponga mas pequeno*/
 
@@ -9504,7 +9565,7 @@ body {
             /*opacity: 0.9;*/
             min-height: 65px;
             /*background: transparent url("http://127.0.0.1:58624/Image/Boceto305-Home-Logo.png") no-repeat center left;*/
-            margin-top: 36px;
+            /*margin-top: 36px;*/
           }
 
       .type-contacto {
@@ -9881,7 +9942,7 @@ body {
        }
        #Banner_Servicios.jumbotron-fluid-3 {
           /*background-image: url("https://bocettos305.com/Image/Metro-Home-Banner-02.jpg");*/
-          background-image: url("https://webinconstruction.com/metro2.0/Image/Metro-Home-Banner-03.jpg");
+          background-image: url("../images/Metro-home-DRIVER.jpg");
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
@@ -9935,7 +9996,7 @@ body {
          width: 15em;
          transform: scale(1.6);
          margin-left: 19px;
-         margin-top: 33px;
+         margin-top: 0px;
 
          /*Este es la funcion para que el logo se ponga mas pequeno*/
 
@@ -10602,7 +10663,7 @@ body {
       margin-top: auto;
       margin-right: auto;
       margin-right: 15px;
-      margin-top: 50px;
+      /*margin-top: 50px;*/
       margin-left: 15px;
       margin-bottom: 15px;
 
@@ -10620,7 +10681,7 @@ body {
       margin-top: auto;
       margin-right: auto;
       margin-right: 15px;
-      margin-top: 15px;
+          /*margin-top: 50px;*/
       margin-left: 15px;
       margin-bottom: 10px;
 

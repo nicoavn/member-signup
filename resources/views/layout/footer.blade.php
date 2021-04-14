@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                     <div class="footer-widget">
-                        <div class="widget-about"><a href="#index">
+                        <div class="widget-about"><a href="/">
                                 <img src="images/Metro-Home-logo-footer.png" alt="Metro-Home-footer-logo" class="img-fluid slide"></a>
                         </div>
                     </div>

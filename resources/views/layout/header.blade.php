@@ -13,7 +13,7 @@
         <div class="container">
             <div id="myNavbar-1" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="menu-nav slide"><a class="btn btn-primary btn-book" href="" role="button" target="_blank"><?php echo $lang['LOG IN'] ?></a></li>
+                    <li class="menu-nav slide"><a class="btn btn-primary btn-book" href="signin" role="button"><?php echo $lang['LOG IN'] ?></a></li>
                     <li id="menu-drive"class="menu-nav slide"><a href="signup"><?php echo $lang['SIGN UP'] ?></a></li>
                     <li class="menu-nav slide"><a data-toggle="modal" data-target="#gridSystemModal" style="font-weight: normal;cursor: pointer;"><?php echo $lang['Idioma'] ?></a></li>
                 </ul>
@@ -64,7 +64,7 @@
 
             <div class="navbar-header">
                 <div id="btn-menu-responsive" class="btn-menu-w" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target="#myNavbar-1"><span></span></div>
-                <a class="navbar-brand " href="#index" title="To Top">
+                <a class="navbar-brand " href="/" title="To Top">
                     <img id="logo" src="images/Metro-Home-logo.png"/>
                 </a>
             </div>
@@ -81,6 +81,27 @@
             </div>
         </div>
     </nav>
+
+
+
+
+
+    <!--########   All JS  ########-->
+    <!--Links local js-->
+    <script type="text/javascript" src="{{ URL::asset('js/jquery-2.1.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/script.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -13,4 +13,9 @@ class SiteController extends Controller
     {
         return view('frontend.sign-up');
     }
+
+    public function signIn()
+    {
+        return view('frontend.sign-in');
+    }
 }

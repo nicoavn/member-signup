@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [SiteController::class, 'home']);
 Route::get('/signup', [SiteController::class, 'signUp']);
+Route::get('/signin', [SiteController::class, 'signIn']);
