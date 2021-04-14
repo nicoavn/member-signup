@@ -5,6 +5,7 @@ $lang = array(
 
     "Your Personal Details" =>"Your Personal Details",
     "DRIVER REGISTRATION" =>" DRIVER REGISTRATION",
+    "DRIVER INFO" => "DRIVER INFO",
     "Please fill this form with your documents information" => "Please fill this form with your documents information",
     "Social Security No." => "Social Security No.",
     "Desired Number" => "Desired Number",
