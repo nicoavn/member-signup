@@ -63,44 +63,44 @@ class ApiController extends Controller
     public function signUp(Request $request)
     {
         $driver = new Driver;
-        $driver->first_name = $request->input('validationFirstname');
-        $driver->last_name = $request->input('validationLastname');
-        $driver->social_security_no = $request->input('validationSocialSecurity');
-        $driver->desired_number = $request->input('validationNumber');
+        $driver->first_name = $request->input('First-Name');
+        $driver->last_name = $request->input('Last-Name');
+        $driver->social_security_no = $request->input('Social-Security');
+        $driver->desired_number = $request->input('Desired-Number');
         $driver->agreed_accept_terms =
             Carbon::parse($request->input('agreed_accept_terms')) ?: Carbon::now();
-        $driver->contact_phone = $request->input('validationPhone');
-        $driver->contact_email = $request->input('contact_email', '');
-        $driver->emergency_contact_name = $request->input('validationName', '');
-        $driver->emergency_contact_phone = $request->input('validationEmergencyPhone', '');
+        $driver->contact_phone = $request->input('Contact-Phone');
+        $driver->contact_email = $request->input('Contact-Email', '');
+        $driver->emergency_contact_name = $request->input('Emergency-Contact-Name', '');
+        $driver->emergency_contact_phone = $request->input('Emergency-Phone', '');
         $driver->save();
 
         $driverDocument = new DriverDocument;
-        $driverDocument->dmv_license = $request->input('validationDMV');
-        $driverDocument->tlc_license = $request->input('validationTLC');
-        $driverDocument->tlc_expiration_date = Carbon::parse($request->input('validationExpiration'));
+        $driverDocument->dmv_license = $request->input('DMV');
+        $driverDocument->tlc_license = $request->input('TLC');
+        $driverDocument->tlc_expiration_date = Carbon::parse($request->input('TLC-Expiration'));
         $driverDocument->driver()->associate($driver);
         $driverDocument->save();
 
         $address = new Address;
-        $address->street_address = $request->input('validationAddress');
-        $address->apt_unit = $request->input('validationAppartment');
-        $address->city = $request->input('validationCity');
-        $address->state = $request->input('validationState');
-        $address->zip_code = $request->input('validationZip');
+        $address->street_address = $request->input('Street-Address');
+        $address->apt_unit = $request->input('Apartment');
+        $address->city = $request->input('City');
+        $address->state = $request->input('State');
+        $address->zip_code = $request->input('Zip-Code');
         $address->driver()->associate($driver);
         $address->save();
 
         $vehicle = new Vehicle;
-        $vehicle->make = $request->input('validationSelectMaker');
-        $vehicle->model = $request->input('validationSelectModel');
-        $vehicle->color = $request->input('validationSelectColor');
-        $vehicle->year = $request->input('validationSelectYear');
-        $vehicle->plate_number = $request->input('plate_number', '');
-        $vehicle->vin = $request->input('validationVin');
-        $vehicle->diamond = $request->input('validationDIAMOND');
-        $vehicle->base_number_name = $request->input('base_number_name', '');
-        $vehicle->tablet_no = $request->input('tablet_no', '');
+        $vehicle->make = $request->input('Car-Maker');
+        $vehicle->model = $request->input('Car-Model');
+        $vehicle->color = $request->input('Car-Color');
+        $vehicle->year = $request->input('Car-Year');
+        $vehicle->plate_number = $request->input('plate-number', '');
+        $vehicle->vin = $request->input('Vin');
+        $vehicle->diamond = $request->input('Diamond');
+        $vehicle->base_number_name = $request->input('Base-number', '');
+        $vehicle->tablet_no = $request->input('Tablet-number', '');
         $vehicle->insurance_certificate_provided = $request->input('insurance_certificate_provided', false);
         $vehicle->nys_registration = $request->input('nys_registration', false);
         $vehicle->driver()->associate($driver);

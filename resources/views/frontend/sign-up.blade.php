@@ -45,7 +45,7 @@ include "configuracion.php"
                                                         <div class="col-md-5">
                                                             <label for="validationFirstname" class="form-label"></label>
                                                             <input type="text" class="form-control"
-                                                                   id="validationFirstname" name="validationFirstname" placeholder="First name"
+                                                                   id="validationFirstname" name="First-Name" placeholder="First name"
                                                                    aria-label="First name" required>
                                                             <div class="invalid-feedback">
                                                                 Please choose a First name.
@@ -54,7 +54,7 @@ include "configuracion.php"
                                                         <div class="col-md-5">
                                                             <label for="validationLastname" class="form-label"></label>
                                                             <input type="text" class="form-control"
-                                                                   id="validationLastname" name="validationLastname" placeholder="Last name"
+                                                                   id="validationLastname" name="Last-Name" placeholder="Last name"
                                                                    aria-label="Last name" required>
                                                             <div class="invalid-feedback">
                                                                 Please choose a Last name.
@@ -67,7 +67,7 @@ include "configuracion.php"
                                                             <label for="validationSocialSecurity"
                                                                    class="form-label"></label>
                                                             <input type="text" class="form-control"
-                                                                   id="validationSocialSecurity" name="validationSocialSecurity"
+                                                                   id="validationSocialSecurity" name="Social-Security"
                                                                    placeholder="Social Security No."
                                                                    aria-label="Social Security No." required>
                                                             <div class="invalid-feedback">
@@ -77,7 +77,7 @@ include "configuracion.php"
                                                         <div class="col-md-5">
                                                             <label for="validationNumber" class="form-label"></label>
                                                             <input type="text" class="form-control"
-                                                                   id="validationNumber" name="validationNumber" placeholder="Desired Number"
+                                                                   id="validationNumber" name="Desired-Number" placeholder="Desired Number"
                                                                    aria-label="Desired Number" required>
                                                             <div class="invalid-feedback">
                                                                 Please choose a Desired Number.
@@ -92,7 +92,7 @@ include "configuracion.php"
                                                         <div class="col-md-10">
                                                             <label for="validationAddress" class="form-label"></label>
                                                             <input type="text" class="form-control"
-                                                                   id="validationAddress" name="validationAddress" placeholder="Street Address"
+                                                                   id="validationAddress" name="Street-Address" placeholder="Street Address"
                                                                    aria-label="Street Address" required>
                                                             <div class="invalid-feedback">
                                                                 Please choose a Street Address.
@@ -104,12 +104,12 @@ include "configuracion.php"
                                                         <span class="legend"></span>
                                                         <div class="row">
                                                             <div class="col-md-5">
-                                                                <label for="validationAppartment"
+                                                                <label for="validationApartment"
                                                                        class="form-label"></label>
                                                                 <input type="text" class="form-control"
-                                                                       id="validationAppartment" name="validationAppartment"
-                                                                       placeholder="Appartment / Unit #"
-                                                                       aria-label="Appartment / Unit #" required>
+                                                                       id="validationApartment" name="Apartment"
+                                                                       placeholder="Apartment / Unit #"
+                                                                       aria-label="Apartment / Unit #" required>
                                                                 <div class="invalid-feedback">
                                                                     Please choose a Appartment / Unit #.
                                                                 </div>
@@ -117,7 +117,7 @@ include "configuracion.php"
                                                             <div class="col-md-5">
                                                                 <label for="validationCity" class="form-label"></label>
                                                                 <input type="text" class="form-control"
-                                                                       id="validationCity" name="validationCity" placeholder="City"
+                                                                       id="validationCity" name="City" placeholder="City"
                                                                        aria-label="City" required>
                                                                 <div class="invalid-feedback">
                                                                     Please select a valid City.
@@ -128,7 +128,7 @@ include "configuracion.php"
                                                         <div class="row">
                                                             <div class="col-md-5">
                                                                 <label for="validationState" class="form-label"></label>
-                                                                <select id="validationState" name="validationState" class="form-select"
+                                                                <select id="validationState" name="State" class="form-select"
                                                                         required>
                                                                     <option
                                                                         selected><?php echo $lang['State'] ?></option>
@@ -193,7 +193,7 @@ include "configuracion.php"
                                                                 <input
                                                                     type="text"
                                                                     class="form-control"
-                                                                    id="validationZip" name="validationZip"
+                                                                    id="validationZip" name="Zip-Code"
                                                                     placeholder="Zip Code"
                                                                     aria-label="Zip Code"
                                                                     required
@@ -211,7 +211,7 @@ include "configuracion.php"
                                                     <div class="row">
                                                         <div class="col-md-5">
                                                             <label for="validationPhone" class="form-label"></label>
-                                                            <input type="text" class="form-control" id="validationPhone" name="validationPhone"
+                                                            <input type="text" class="form-control" id="validationPhone" name="Contact-Phone"
                                                                    placeholder="Phone" aria-label="Phone" required>
                                                             <div class="invalid-feedback">
                                                                 Please choose a Phone.
@@ -220,7 +220,7 @@ include "configuracion.php"
                                                         <div class="col-md-5">
                                                             <label for="validationEmail" class="form-label"></label>
                                                             <input type="email" class="form-control"
-                                                                   id="validationEmail" name="validationEmail" placeholder="Email"
+                                                                   id="validationEmail" name="Contact-Email" placeholder="Email"
                                                                    aria-label="Email" required>
                                                             <div class="invalid-feedback">
                                                                 Please choose a Email.
@@ -235,7 +235,7 @@ include "configuracion.php"
                                                     <div class="row">
                                                         <div class="col-md-5">
                                                             <label for="validationName" class="form-label"></label>
-                                                            <input type="text" class="form-control" id="validationName" name="validationName"
+                                                            <input type="text" class="form-control" id="validationName" name="Emergency-Contact-Name"
                                                                    placeholder="Name" aria-label="Name" required>
                                                             <div class="invalid-feedback">
                                                                 Please choose a Name.
@@ -243,7 +243,7 @@ include "configuracion.php"
                                                         </div>
                                                         <div class="col-md-5">
                                                             <label for="validationEmergencyPhone" class="form-label"></label>
-                                                            <input type="text" class="form-control" id="validationEmergencyPhone" name="validationEmergencyPhone"
+                                                            <input type="text" class="form-control" id="validationEmergencyPhone" name="Emergency-Phone"
                                                                    placeholder="Phone" aria-label="Phone" required>
                                                             <div class="invalid-feedback">
                                                                 Please choose a Phone.
@@ -257,7 +257,7 @@ include "configuracion.php"
                                                     <div class="row">
                                                         <div class="col-md-10">
                                                             <label for="validationDMV" class="form-label"></label>
-                                                            <input type="text" class="form-control" id="validationDMV" name="validationDMV"
+                                                            <input type="text" class="form-control" id="validationDMV" name="DMV"
                                                                    placeholder="DMV License #"
                                                                    aria-label="DMV License #" required>
                                                             <div class="invalid-feedback">
@@ -266,7 +266,7 @@ include "configuracion.php"
                                                         </div>
                                                         <div class="col-md-10">
                                                             <label for="validationTLC" class="form-label"></label>
-                                                            <input type="text" class="form-control" id="validationTLC" name="validationTLC"
+                                                            <input type="text" class="form-control" id="validationTLC" name="TLC"
                                                                    placeholder="TLC License #"
                                                                    aria-label="TLC License #" required>
                                                             <div class="invalid-feedback">
@@ -277,7 +277,7 @@ include "configuracion.php"
                                                             <label for="validationExpiration"
                                                                    class="form-label"></label>
                                                             <input type="date" class="form-control"
-                                                                   id="validationExpiration" name="validationExpiration"
+                                                                   id="validationExpiration" name="TLC-Expiration"
                                                                    placeholder="TLC Expiration Date MM/DD/YYYY"
                                                                    aria-label="TLC Expiration Date MM/DD/YYYY" required>
                                                             <div class="invalid-feedback">
@@ -293,7 +293,7 @@ include "configuracion.php"
                                                         <div class="col-md-10">
                                                             <label for="validationUsername" class="form-label"></label>
                                                             <input type="email" class="form-control"
-                                                                   id="validationUsername" name="validationUsername" placeholder="Email"
+                                                                   id="validationUsername" name="Username" placeholder="Email"
                                                                    aria-label="Username or email" required>
                                                             <div id="validationUsername" class="invalid-feedback">
                                                                 Please choose a username.
@@ -303,7 +303,7 @@ include "configuracion.php"
                                                                 <label for="validationPassword"
                                                                        class="form-label"></label>
                                                                 <input type="password" class="form-control"
-                                                                       id="validationPassword" name="validationPassword"
+                                                                       id="validationPassword" name="Password"
                                                                        placeholder="<?php echo $lang['Password'] ?>"
                                                                        aria-label="Create a password" required>
                                                                 <div id="validationUsername" class="invalid-feedback">
@@ -314,11 +314,11 @@ include "configuracion.php"
                                                                 <label for="validationConfirmPassword"
                                                                        class="form-label"></label>
                                                                 <input type="password" class="form-control"
-                                                                       id="validationConfirmPassword" name="validationConfirmPassword"
+                                                                       id="validationConfirmPassword" name="Confirm-Password"
                                                                        placeholder="<?php echo $lang['Confirm Password'] ?>"
                                                                        aria-label="Confirm password" required>
                                                                 <div id="validationUsername" class="invalid-feedback">
-                                                                    Please choose a Confirm password.
+                                                                    The password does not match .
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -371,7 +371,7 @@ include "configuracion.php"
                                                         <div class="col-md-10">
                                                             <label for="validationSelectYear"
                                                                    class="form-label"></label>
-                                                            <select id="validationSelectYear" name="validationSelectYear" class="form-select"
+                                                            <select id="validationSelectYear" name="Car-Year" class="form-select"
                                                                     required>
                                                                 <option
                                                                     selected><?php echo $lang['Select Year'] ?></option>
@@ -387,7 +387,7 @@ include "configuracion.php"
                                                         <div class="col-md-10">
                                                             <label for="validationSelectMaker"
                                                                    class="form-label"></label>
-                                                            <select id="validationSelectMaker" name="validationSelectMaker" class="form-select"
+                                                            <select id="validationSelectMaker" name="Car-Maker" class="form-select"
                                                                     required>
                                                                 <option
                                                                     selected><?php echo $lang['Select Maker'] ?></option>
@@ -403,7 +403,7 @@ include "configuracion.php"
                                                         <div class="col-md-10">
                                                             <label for="validationSelectModel"
                                                                    class="form-label"></label>
-                                                            <select id="validationSelectModel" name="validationSelectModel" class="form-select"
+                                                            <select id="validationSelectModel" name="Car-Model" class="form-select"
                                                                     required>
                                                                 <option
                                                                     selected><?php echo $lang['Select Model'] ?></option>
@@ -419,7 +419,7 @@ include "configuracion.php"
                                                         <div class="col-md-10">
                                                             <label for="validationSelectColor"
                                                                    class="form-label"></label>
-                                                            <select id="validationSelectColor" name="validationSelectColor" class="form-select"
+                                                            <select id="validationSelectColor" name="Car-Color" class="form-select"
                                                                     required>
                                                                 <option
                                                                     selected><?php echo $lang['Select Color'] ?></option>
@@ -477,7 +477,7 @@ include "configuracion.php"
                                                                    class="form-label"></label>
                                                             <input type="text" class="form-control"
                                                                    id="validationPlateNumber#" placeholder=""
-                                                                   aria-label="PLATE NUMBER #" required>
+                                                                   aria-label="PLATE NUMBER #" name="plate-number" required>
                                                             <div class="invalid-feedback">
                                                                 Please choose a PLATE NUMBER #.
                                                             </div>
@@ -488,7 +488,7 @@ include "configuracion.php"
                                                     <div class="row">
                                                         <div class="col-md-10">
                                                             <label for="validationVin" class="form-label"></label>
-                                                            <input type="text" class="form-control" id="validationVin" name="validationVin"
+                                                            <input type="text" class="form-control" id="validationVin" name="Vin"
                                                                    placeholder="" aria-label="VIN" required>
                                                             <div class="invalid-feedback">
                                                                 Please choose a Vin.
@@ -501,7 +501,7 @@ include "configuracion.php"
                                                         <div class="col-md-10">
                                                             <label for="validationDIAMOND" class="form-label"></label>
                                                             <input type="text" class="form-control"
-                                                                   id="validationDIAMOND" name="validationDIAMOND" placeholder=""
+                                                                   id="validationDIAMOND" name="Diamond" placeholder=""
                                                                    aria-label="DIAMOND" required>
                                                             <div class="invalid-feedback">
                                                                 Please choose a Diamond.
@@ -515,7 +515,7 @@ include "configuracion.php"
                                                             <label for="validationBASENUMBER/NAME"
                                                                    class="form-label"></label>
                                                             <input type="text" class="form-control"
-                                                                   id="validationBASENUMBER/NAME" placeholder=""
+                                                                   id="validationBASENUMBER/NAME" name="Base-number" placeholder=""
                                                                    aria-label="Base Number /Name" required>
                                                             <div class="invalid-feedback">
                                                                 Please choose a Base Number /Name.
@@ -529,7 +529,7 @@ include "configuracion.php"
                                                         <div class="col-md-10">
                                                             <label for="validationTABLET#" class="form-label"></label>
                                                             <input type="text" class="form-control"
-                                                                   id="validationTABLET#" placeholder=""
+                                                                   id="validationTABLET#" name="Tablet-number" placeholder=""
                                                                    aria-label="TABLET #" required>
                                                             <div class="invalid-feedback">
                                                                 Please choose a Tablet #.
@@ -544,14 +544,14 @@ include "configuracion.php"
                                                         <div class="col-md-10" style="text-align: left;">
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                       name="inlineRadioOptions" id="inlineRadio1"
+                                                                       name="insurance_certificate_provided" id="inlineRadio1"
                                                                        value="option1" style="margin-bottom: 0px;">
                                                                 <label class="form-check-label"
                                                                        for="inlineRadio1">YES</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                       name="inlineRadioOptions" id="inlineRadio2"
+                                                                       name="inlineRadioOptions2" id="inlineRadio2"
                                                                        value="option2" style="margin-bottom: 0px;">
                                                                 <label class="form-check-label"
                                                                        for="inlineRadio2">NO</label>
@@ -569,17 +569,17 @@ include "configuracion.php"
                                                         <div class="col-md-10" style="text-align: left;">
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                       name="inlineRadioOptions2" id="inlineRadio1"
-                                                                       value="option1" style="margin-bottom: 0px;">
+                                                                       name="nys_registration" id="inlineRadio3"
+                                                                       value="option3" style="margin-bottom: 0px;">
                                                                 <label class="form-check-label"
-                                                                       for="inlineRadio1">YES</label>
+                                                                       for="inlineRadio3">YES</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                       name="inlineRadioOptions2" id="inlineRadio2"
-                                                                       value="option2" style="margin-bottom: 0px;">
+                                                                       name="inlineRadioOptions4" id="inlineRadio4"
+                                                                       value="option4" style="margin-bottom: 0px;">
                                                                 <label class="form-check-label"
-                                                                       for="inlineRadio2">NO</label>
+                                                                       for="inlineRadio4">NO</label>
                                                             </div>
                                                             <div class="invalid-feedback">
                                                                 You must agree before submitting.
@@ -677,7 +677,7 @@ include "configuracion.php"
                                                             <div class="col-md-10 step-3-agree">
                                                                 <div class="form-check form-switch">
                                                                     <input class="form-check-input" type="radio"
-                                                                           id="invalidCheck" required>
+                                                                           id="invalidCheck" name="inlineRadioOptions5" required>
                                                                     <label class="form-check-label label_agree"
                                                                            for="invalidCheck">
                                                                         I AGREE AND ACCEPT THIS TERMS
@@ -721,7 +721,7 @@ include "configuracion.php"
                                                                           class="input-group-text px-3 text-muted"></span>
                                                                     <input type="file" x-ref="file"
                                                                            @change="fileName = $refs.file.files[0].name"
-                                                                           name="img[]" class="d-none">
+                                                                           name="TLC-License-Img" placeholder="TLC-License-Img" class="d-none" >
                                                                     <input class="step-4-imput" type="text"
                                                                            class="form-control form-control-lg"
                                                                            placeholder="TLC LICENSE" x-model="fileName"
@@ -740,7 +740,7 @@ include "configuracion.php"
                                                                           class="input-group-text px-3 text-muted"></span>
                                                                     <input type="file" x-ref="file"
                                                                            @change="fileName = $refs.file.files[0].name"
-                                                                           name="img[]" class="d-none">
+                                                                           name="TLC-Inspection-Img" placeholder="TLC-Inspection-Img" class="d-none">
                                                                     <input class="step-4-imput" type="text"
                                                                            class="form-control form-control-lg"
                                                                            placeholder="TLC INSPECTION"
@@ -760,7 +760,7 @@ include "configuracion.php"
                                                                           class="input-group-text px-3 text-muted"></span>
                                                                     <input type="file" x-ref="file"
                                                                            @change="fileName = $refs.file.files[0].name"
-                                                                           name="img[]" class="d-none">
+                                                                           name="DMV-License-Img" placeholder="DMV-License-Img" class="d-none">
                                                                     <input class="step-4-imput" type="text"
                                                                            class="form-control form-control-lg"
                                                                            placeholder="DMV LICENSE" x-model="fileName"
@@ -779,7 +779,7 @@ include "configuracion.php"
                                                                           class="input-group-text px-3 text-muted"></span>
                                                                     <input type="file" x-ref="file"
                                                                            @change="fileName = $refs.file.files[0].name"
-                                                                           name="img[]" class="d-none">
+                                                                           name="Car-Registration-Img" placeholder="Car-Registration-Img" class="d-none">
                                                                     <input class="step-4-imput" type="text"
                                                                            class="form-control form-control-lg"
                                                                            placeholder="CAR REGISTRATION"
@@ -799,7 +799,7 @@ include "configuracion.php"
                                                                           class="input-group-text px-3 text-muted"></span>
                                                                     <input type="file" x-ref="file"
                                                                            @change="fileName = $refs.file.files[0].name"
-                                                                           name="img[]" class="d-none">
+                                                                           name="Proof-Of-Insurance-Img" placeholder="Proof-Of-Insurance-Img" class="d-none">
                                                                     <input class="step-4-imput" type="text"
                                                                            class="form-control form-control-lg"
                                                                            placeholder="PROOF OF INSURANCE"
@@ -819,7 +819,7 @@ include "configuracion.php"
                                                                           class="input-group-text px-3 text-muted"></span>
                                                                     <input type="file" x-ref="file"
                                                                            @change="fileName = $refs.file.files[0].name"
-                                                                           name="img[]" class="d-none">
+                                                                           name="Certificate-Of-Insurance-Img" placeholder="Certificate-Of-Insurance-Img" class="d-none">
                                                                     <input class="step-4-imput" type="text"
                                                                            class="form-control form-control-lg"
                                                                            placeholder="CERTIFICATE OF INSURANCE"
