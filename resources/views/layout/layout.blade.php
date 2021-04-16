@@ -14,7 +14,7 @@
     <link href="{{ asset('css/bs-stepper.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/_main.css') }}" rel="stylesheet">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
 </head>

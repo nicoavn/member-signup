@@ -19,6 +19,8 @@ use App\Models\Driver;
 Route::middleware([])->group(function () {
     Route::get('/vehicle/makes/{year?}', [ApiController::class, 'vehicleMakes']);
     Route::get('/vehicle/{make}/models/{year?}', [ApiController::class, 'vehicleModels']);
+
+    Route::post('signup', [ApiController::class, 'signUp']);
 });
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
