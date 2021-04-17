@@ -331,7 +331,7 @@ include "configuracion.php"
                                                             <div class="col-md-5">
                                                                 <div class="form-check form-switch">
                                                                     <input class="form-check-input" type="radio"
-                                                                           id="invalidCheck" required>
+                                                                           id="invalidCheck" name="agreed_accept_account" required>
                                                                     <label class="form-check-label label_agree"
                                                                            for="invalidCheck">
                                                                         I AGREE AND ACCEPT
@@ -677,7 +677,7 @@ include "configuracion.php"
                                                             <div class="col-md-10 step-3-agree">
                                                                 <div class="form-check form-switch">
                                                                     <input class="form-check-input" type="radio"
-                                                                           id="invalidCheck" name="inlineRadioOptions5" required>
+                                                                           id="invalidCheck" name="agreed_accept_terms" required>
                                                                     <label class="form-check-label label_agree"
                                                                            for="invalidCheck">
                                                                         I AGREE AND ACCEPT THIS TERMS
@@ -722,8 +722,8 @@ include "configuracion.php"
                                                                     <input type="file" x-ref="file"
                                                                            @change="fileName = $refs.file.files[0].name"
                                                                            name="TLC-License-Img" placeholder="TLC-License-Img" class="d-none" >
-                                                                    <input class="step-4-imput" type="text"
-                                                                           class="form-control form-control-lg"
+                                                                    <input  type="text"
+                                                                           class="form-control form-control-lg step-4-imput"
                                                                            placeholder="TLC LICENSE" x-model="fileName"
                                                                            style="margin-bottom: 0px;margin-top: 0px;border-radius: 0px;">
                                                                     <button id="img-upload"
@@ -741,8 +741,8 @@ include "configuracion.php"
                                                                     <input type="file" x-ref="file"
                                                                            @change="fileName = $refs.file.files[0].name"
                                                                            name="TLC-Inspection-Img" placeholder="TLC-Inspection-Img" class="d-none">
-                                                                    <input class="step-4-imput" type="text"
-                                                                           class="form-control form-control-lg"
+                                                                    <input  type="text"
+                                                                           class="form-control form-control-lg step-4-imput"
                                                                            placeholder="TLC INSPECTION"
                                                                            x-model="fileName"
                                                                            style="margin-bottom: 0px;margin-top: 0px;border-radius: 0px;">
@@ -761,8 +761,8 @@ include "configuracion.php"
                                                                     <input type="file" x-ref="file"
                                                                            @change="fileName = $refs.file.files[0].name"
                                                                            name="DMV-License-Img" placeholder="DMV-License-Img" class="d-none">
-                                                                    <input class="step-4-imput" type="text"
-                                                                           class="form-control form-control-lg"
+                                                                    <input  type="text"
+                                                                           class="form-control form-control-lg step-4-imput"
                                                                            placeholder="DMV LICENSE" x-model="fileName"
                                                                            style="margin-bottom: 0px;margin-top: 0px;border-radius: 0px;">
                                                                     <button id="img-upload"
@@ -780,8 +780,8 @@ include "configuracion.php"
                                                                     <input type="file" x-ref="file"
                                                                            @change="fileName = $refs.file.files[0].name"
                                                                            name="Car-Registration-Img" placeholder="Car-Registration-Img" class="d-none">
-                                                                    <input class="step-4-imput" type="text"
-                                                                           class="form-control form-control-lg"
+                                                                    <input type="text"
+                                                                           class="form-control form-control-lg step-4-imput"
                                                                            placeholder="CAR REGISTRATION"
                                                                            x-model="fileName"
                                                                            style="margin-bottom: 0px;margin-top: 0px;border-radius: 0px;">
@@ -800,8 +800,8 @@ include "configuracion.php"
                                                                     <input type="file" x-ref="file"
                                                                            @change="fileName = $refs.file.files[0].name"
                                                                            name="Proof-Of-Insurance-Img" placeholder="Proof-Of-Insurance-Img" class="d-none">
-                                                                    <input class="step-4-imput" type="text"
-                                                                           class="form-control form-control-lg"
+                                                                    <input  type="text"
+                                                                           class="form-control form-control-lg step-4-imput"
                                                                            placeholder="PROOF OF INSURANCE"
                                                                            x-model="fileName"
                                                                            style="margin-bottom: 0px;margin-top: 0px;border-radius: 0px;">
@@ -820,8 +820,8 @@ include "configuracion.php"
                                                                     <input type="file" x-ref="file"
                                                                            @change="fileName = $refs.file.files[0].name"
                                                                            name="Certificate-Of-Insurance-Img" placeholder="Certificate-Of-Insurance-Img" class="d-none">
-                                                                    <input class="step-4-imput" type="text"
-                                                                           class="form-control form-control-lg"
+                                                                    <input type="text"
+                                                                           class="form-control form-control-lg step-4-imput"
                                                                            placeholder="CERTIFICATE OF INSURANCE"
                                                                            x-model="fileName"
                                                                            style="margin-bottom: 0px;margin-top: 0px;border-radius: 0px;">

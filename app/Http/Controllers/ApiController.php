@@ -69,6 +69,8 @@ class ApiController extends Controller
         $driver->desired_number = $request->input('Desired-Number');
         $driver->agreed_accept_terms =
             Carbon::parse($request->input('agreed_accept_terms')) ?: Carbon::now();
+        $driver->agreed_accept_terms =
+            Carbon::parse($request->input('agreed_accept_account')) ?: Carbon::now();
         $driver->contact_phone = $request->input('Contact-Phone');
         $driver->contact_email = $request->input('Contact-Email', '');
         $driver->emergency_contact_name = $request->input('Emergency-Contact-Name', '');
