@@ -12,5 +12,7 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('home');
-
+    $router->resource('site/users', 'UserController');
+    $router->resource('site/drivers', 'DriverController');
+    $router->resource('site/uploaded-documents', 'UploadedDocumentController');
 });

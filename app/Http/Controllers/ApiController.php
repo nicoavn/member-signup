@@ -109,9 +109,10 @@ class ApiController extends Controller
         $vehicle->driver()->associate($driver);
         $vehicle->save();
 
+        $encodedId = base64_encode($driver->id);
 
         $tlcLicenseImg = $request->file('TLC-License-Img');
-        $tlcLicenseImgPath = $tlcLicenseImg->store('driverFiles/' . base64_encode($driver->id));
+        $tlcLicenseImgPath = $tlcLicenseImg->store('driverFiles/' . $encodedId, ['disk' => 'public']);
         $uploadedDocument = new UploadedDocument();
         $uploadedDocument->filename = $tlcLicenseImgPath;
         $uploadedDocument->document_type = UploadedDocument::DOCUMENT_TYPE_TLC_LICENSE;
@@ -119,7 +120,7 @@ class ApiController extends Controller
         $uploadedDocument->save();
 
         $tlcInspectionImg = $request->file('TLC-Inspection-Img');
-        $tlcInspectionImgPath = $tlcInspectionImg->store('driverFiles/' . base64_encode($driver->id));
+        $tlcInspectionImgPath = $tlcInspectionImg->store('driverFiles/' . $encodedId, ['disk' => 'public']);
         $uploadedDocument = new UploadedDocument();
         $uploadedDocument->filename = $tlcInspectionImgPath;
         $uploadedDocument->document_type = UploadedDocument::DOCUMENT_TYPE_TLC_INSPECTION;
@@ -127,7 +128,7 @@ class ApiController extends Controller
         $uploadedDocument->save();
 
         $dmvLicenseImg = $request->file('DMV-License-Img');
-        $dmvLicenseImgPath = $dmvLicenseImg->store('driverFiles/' . base64_encode($driver->id));
+        $dmvLicenseImgPath = $dmvLicenseImg->store('driverFiles/' . $encodedId, ['disk' => 'public']);
         $uploadedDocument = new UploadedDocument();
         $uploadedDocument->filename = $dmvLicenseImgPath;
         $uploadedDocument->document_type = UploadedDocument::DOCUMENT_TYPE_DMV_LICENSE;
@@ -135,7 +136,7 @@ class ApiController extends Controller
         $uploadedDocument->save();
 
         $carRegistrationImg = $request->file('Car-Registration-Img');
-        $carRegistrationImgPath = $carRegistrationImg->store('driverFiles/' . base64_encode($driver->id));
+        $carRegistrationImgPath = $carRegistrationImg->store('driverFiles/' . $encodedId, ['disk' => 'public']);
         $uploadedDocument = new UploadedDocument();
         $uploadedDocument->filename = $carRegistrationImgPath;
         $uploadedDocument->document_type = UploadedDocument::DOCUMENT_TYPE_CAR_REGISTRATION;
@@ -143,7 +144,7 @@ class ApiController extends Controller
         $uploadedDocument->save();
 
         $proofOfInsuranceImg = $request->file('Proof-Of-Insurance-Img');
-        $proofOfInsuranceImgPath = $proofOfInsuranceImg->store('driverFiles/' . base64_encode($driver->id));
+        $proofOfInsuranceImgPath = $proofOfInsuranceImg->store('driverFiles/' . $encodedId, ['disk' => 'public']);
         $uploadedDocument = new UploadedDocument();
         $uploadedDocument->filename = $proofOfInsuranceImgPath;
         $uploadedDocument->document_type = UploadedDocument::DOCUMENT_TYPE_PROOF_OF_INSURANCE;
@@ -151,7 +152,7 @@ class ApiController extends Controller
         $uploadedDocument->save();
 
         $certificateOfInsuranceImg = $request->file('Certificate-Of-Insurance-Img');
-        $certificateOfInsuranceImgPath = $certificateOfInsuranceImg->store('driverFiles/' . base64_encode($driver->id));
+        $certificateOfInsuranceImgPath = $certificateOfInsuranceImg->store('driverFiles/' . $encodedId, ['disk' => 'public']);
         $uploadedDocument = new UploadedDocument();
         $uploadedDocument->filename = $certificateOfInsuranceImgPath;
         $uploadedDocument->document_type = UploadedDocument::DOCUMENT_TYPE_CERTIFICATE_OF_INSURANCE;
