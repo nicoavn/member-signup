@@ -8,11 +8,13 @@ use App\Models\Address;
 use App\Models\Driver;
 use App\Models\DriverDocument;
 use App\Models\UploadedDocument;
+use App\Models\User;
 use App\Models\Vehicle;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 
 class ApiController extends Controller
@@ -68,10 +70,8 @@ class ApiController extends Controller
         $driver->last_name = $request->input('Last-Name');
         $driver->social_security_no = $request->input('Social-Security');
         $driver->desired_number = $request->input('Desired-Number');
-        $driver->agreed_accept_terms =
-            Carbon::parse($request->input('agreed_accept_terms')) ?: Carbon::now();
-        $driver->agreed_accept_terms =
-            Carbon::parse($request->input('agreed_accept_account')) ?: Carbon::now();
+        $driver->agreed_accept_terms = $request->boolean('Agreed-Accept-Terms') ? Carbon::now() : null;
+        $driver->agreed_accept_account = $request->boolean('Agreed-Accept-Account') ? Carbon::now() : null;
         $driver->contact_phone = $request->input('Contact-Phone');
         $driver->contact_email = $request->input('Contact-Email', '');
         $driver->emergency_contact_name = $request->input('Emergency-Contact-Name', '');
@@ -104,8 +104,8 @@ class ApiController extends Controller
         $vehicle->diamond = $request->input('Diamond');
         $vehicle->base_number_name = $request->input('Base-number', '');
         $vehicle->tablet_no = $request->input('Tablet-number', '');
-        $vehicle->insurance_certificate_provided = $request->input('insurance_certificate_provided', false);
-        $vehicle->nys_registration = $request->input('nys_registration', false);
+        $vehicle->insurance_certificate_provided = $request->boolean('Insurance-Certificate-Provided', false);
+        $vehicle->nys_registration = $request->boolean('NYS-Registration', false);
         $vehicle->driver()->associate($driver);
         $vehicle->save();
 
@@ -157,6 +157,12 @@ class ApiController extends Controller
         $uploadedDocument->document_type = UploadedDocument::DOCUMENT_TYPE_CERTIFICATE_OF_INSURANCE;
         $uploadedDocument->driver()->associate($driver);
         $uploadedDocument->save();
+
+        $user = new User();
+        $user->name = $request->input('First-Name');
+        $user->email = $request->input('Username');
+        $user->password = Hash::make($request->input('Password'));
+        $user->save();
 
         return new JsonResponse($address);
     }

@@ -332,9 +332,9 @@ include "configuracion.php"
                                                             <div class="col-md-5">
                                                                 <div class="form-check form-switch">
                                                                     <input class="form-check-input" type="radio"
-                                                                           id="invalidCheck" name="agreed_accept_account" required>
+                                                                           id="agreed-accept-account" name="Agreed-Accept-Account" required>
                                                                     <label class="form-check-label label_agree"
-                                                                           for="invalidCheck">
+                                                                           for="agreed-accept-account">
                                                                         I AGREE AND ACCEPT
                                                                     </label>
                                                                     <div class="invalid-feedback">
@@ -545,15 +545,15 @@ include "configuracion.php"
                                                         <div class="col-md-10" style="text-align: left;">
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                       name="insurance_certificate_provided" id="inlineRadio1"
-                                                                       value="option1" style="margin-bottom: 0px;">
+                                                                       name="Insurance-Certificate-Provided" id="inlineRadio1"
+                                                                       value="1" style="margin-bottom: 0px;">
                                                                 <label class="form-check-label"
                                                                        for="inlineRadio1">YES</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                       name="insurance_certificate_provided" id="inlineRadio2"
-                                                                       value="option2" style="margin-bottom: 0px;">
+                                                                       name="Insurance-Certificate-Provided" id="inlineRadio2"
+                                                                       value="0" style="margin-bottom: 0px;">
                                                                 <label class="form-check-label"
                                                                        for="inlineRadio2">NO</label>
                                                             </div>
@@ -570,15 +570,15 @@ include "configuracion.php"
                                                         <div class="col-md-10" style="text-align: left;">
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                       name="nys_registration" id="inlineRadio3"
-                                                                       value="option3" style="margin-bottom: 0px;">
+                                                                       name="NYS-Registration" id="inlineRadio3"
+                                                                       value="1" style="margin-bottom: 0px;">
                                                                 <label class="form-check-label"
                                                                        for="inlineRadio3">YES</label>
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                       name="nys_registration" id="inlineRadio4"
-                                                                       value="option4" style="margin-bottom: 0px;">
+                                                                       name="NYS-Registration" id="inlineRadio4"
+                                                                       value="0" style="margin-bottom: 0px;">
                                                                 <label class="form-check-label"
                                                                        for="inlineRadio4">NO</label>
                                                             </div>
@@ -678,9 +678,9 @@ include "configuracion.php"
                                                             <div class="col-md-10 step-3-agree">
                                                                 <div class="form-check form-switch">
                                                                     <input class="form-check-input" type="radio"
-                                                                           id="invalidCheck" name="agreed_accept_terms" required>
+                                                                           id="agreed-accept-terms" name="Agreed-Accept-Terms" required>
                                                                     <label class="form-check-label label_agree"
-                                                                           for="invalidCheck">
+                                                                           for="agreed-accept-terms">
                                                                         I AGREE AND ACCEPT THIS TERMS
                                                                     </label>
                                                                     <div class="invalid-feedback">

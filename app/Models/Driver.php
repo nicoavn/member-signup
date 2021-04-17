@@ -18,6 +18,7 @@ use Illuminate\Support\Carbon;
  * @property string $social_security_no
  * @property string $desired_number
  * @property string $agreed_accept_terms
+ * @property string $agreed_accept_account
  * @property string $contact_phone
  * @property string $contact_email
  * @property string $emergency_contact_name
