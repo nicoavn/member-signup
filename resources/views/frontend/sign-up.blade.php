@@ -551,7 +551,7 @@ include "configuracion.php"
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                       name="inlineRadioOptions2" id="inlineRadio2"
+                                                                       name="insurance_certificate_provided" id="inlineRadio2"
                                                                        value="option2" style="margin-bottom: 0px;">
                                                                 <label class="form-check-label"
                                                                        for="inlineRadio2">NO</label>
@@ -576,7 +576,7 @@ include "configuracion.php"
                                                             </div>
                                                             <div class="form-check form-check-inline">
                                                                 <input class="form-check-input" type="radio"
-                                                                       name="inlineRadioOptions4" id="inlineRadio4"
+                                                                       name="nys_registration" id="inlineRadio4"
                                                                        value="option4" style="margin-bottom: 0px;">
                                                                 <label class="form-check-label"
                                                                        for="inlineRadio4">NO</label>
