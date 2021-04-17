@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Carbon;
 
 /**
@@ -27,15 +29,18 @@ use Illuminate\Support\Carbon;
  */
 class Driver extends Model
 {
-    use HasFactory;
-
-    public function address()
+    public function address(): HasOne
     {
         return $this->hasOne(Address::class);
     }
 
-    public function driverDocument()
+    public function driverDocument(): HasOne
     {
         return $this->hasOne(DriverDocument::class);
+    }
+
+    public function uploadedDocuments(): HasMany
+    {
+        return $this->hasMany(UploadedDocument::class);
     }
 }

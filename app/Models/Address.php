@@ -24,8 +24,6 @@ use Illuminate\Support\Carbon;
  */
 class Address extends Model
 {
-    use HasFactory;
-
     protected $fillable = [
         'driver_id',
         'street_address',

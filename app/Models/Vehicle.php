@@ -29,8 +29,6 @@ use Illuminate\Support\Carbon;
  */
 class Vehicle extends Model
 {
-    use HasFactory;
-
     public function driver(): BelongsTo
     {
         return $this->belongsTo(Driver::class);

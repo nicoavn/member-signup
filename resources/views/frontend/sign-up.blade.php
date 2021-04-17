@@ -20,6 +20,7 @@ include "configuracion.php"
                                             id="SignUpForm"
                                             method="post"
                                             class="needs-validation"
+                                            enctype="multipart/form-data"
                                             novalidate>
                                             @csrf
                                             <ul id="progressbar">
@@ -720,6 +721,7 @@ include "configuracion.php"
                                                                     <span id="img-camara"
                                                                           class="input-group-text px-3 text-muted"></span>
                                                                     <input type="file" x-ref="file"
+                                                                           id="TLC-License-Img"
                                                                            @change="fileName = $refs.file.files[0].name"
                                                                            name="TLC-License-Img" placeholder="TLC-License-Img" class="d-none" >
                                                                     <input class="step-4-imput" type="text"
@@ -739,6 +741,7 @@ include "configuracion.php"
                                                                     <span id="img-camara"
                                                                           class="input-group-text px-3 text-muted"></span>
                                                                     <input type="file" x-ref="file"
+                                                                           id="TLC-Inspection-Img"
                                                                            @change="fileName = $refs.file.files[0].name"
                                                                            name="TLC-Inspection-Img" placeholder="TLC-Inspection-Img" class="d-none">
                                                                     <input class="step-4-imput" type="text"
@@ -759,6 +762,7 @@ include "configuracion.php"
                                                                     <span id="img-camara"
                                                                           class="input-group-text px-3 text-muted"></span>
                                                                     <input type="file" x-ref="file"
+                                                                           id="DMV-License-Img"
                                                                            @change="fileName = $refs.file.files[0].name"
                                                                            name="DMV-License-Img" placeholder="DMV-License-Img" class="d-none">
                                                                     <input class="step-4-imput" type="text"
@@ -778,6 +782,7 @@ include "configuracion.php"
                                                                     <span id="img-camara"
                                                                           class="input-group-text px-3 text-muted"></span>
                                                                     <input type="file" x-ref="file"
+                                                                           id="Car-Registration-Img"
                                                                            @change="fileName = $refs.file.files[0].name"
                                                                            name="Car-Registration-Img" placeholder="Car-Registration-Img" class="d-none">
                                                                     <input class="step-4-imput" type="text"
@@ -798,6 +803,7 @@ include "configuracion.php"
                                                                     <span id="img-camara"
                                                                           class="input-group-text px-3 text-muted"></span>
                                                                     <input type="file" x-ref="file"
+                                                                           id="Proof-Of-Insurance-Img"
                                                                            @change="fileName = $refs.file.files[0].name"
                                                                            name="Proof-Of-Insurance-Img" placeholder="Proof-Of-Insurance-Img" class="d-none">
                                                                     <input class="step-4-imput" type="text"
@@ -818,6 +824,7 @@ include "configuracion.php"
                                                                     <span id="img-camara"
                                                                           class="input-group-text px-3 text-muted"></span>
                                                                     <input type="file" x-ref="file"
+                                                                           id="Certificate-Of-Insurance-Img"
                                                                            @change="fileName = $refs.file.files[0].name"
                                                                            name="Certificate-Of-Insurance-Img" placeholder="Certificate-Of-Insurance-Img" class="d-none">
                                                                     <input class="step-4-imput" type="text"
@@ -1129,42 +1136,41 @@ include "configuracion.php"
         var currentYear = new Date().getFullYear();
         var minYear = new Date().getFullYear() - 25;
 
-        function loadYears() {
-            var control = $("#validationSelectYear");
-            control.html('<option selected>{{ $lang['Select Year'] }}</option>');
-            for (var i = currentYear; i >= minYear; i--) {
-                control.append('<option value="' + i + '">' + i + '</option>');
-            }
-        }
-
-        function loadVehicleMakes() {
-            var url = apiUrl + "/vehicle/makes/" + selectedYear;
-            $.get(url, function (response) {
-                makes = response.data;
-                var control = $("#validationSelectMaker");
-                control.html('<option selected>{{ $lang['Select Maker'] }}</option>');
-                $.each(makes, function (i, d) {
-                    // You will need to alter the below to get the right values from your json object.  Guessing that d.id / d.modelName are columns in your carModels data
-                    control.append('<option value="' + d + '">' + d + '</option>');
-                });
-            });
-        }
-
-        function loadVehicleModels() {
-            var url = apiUrl + "/vehicle/" + selectedMake.toLowerCase() + "/models/" + selectedYear;
-            $.get(url, function (response) {
-                models = response.data;
-                var control = $('#validationSelectModel');
-                control.html('<option selected>{{ $lang['Select Model'] }}</option>');
-                $.each(models, function (i, d) {
-                    // You will need to alter the below to get the right values from your json object.  Guessing that d.id / d.modelName are columns in your carModels data
-                    control.append('<option value="' + d + '">' + d + '</option>');
-                });
-            });
-        }
-
-        (function () {
+        $(function () {
             'use strict'
+            function loadYears() {
+                var control = $("#validationSelectYear");
+                control.html('<option selected>{{ $lang['Select Year'] }}</option>');
+                for (var i = currentYear; i >= minYear; i--) {
+                    control.append('<option value="' + i + '">' + i + '</option>');
+                }
+            }
+
+            function loadVehicleMakes() {
+                var url = apiUrl + "/vehicle/makes/" + selectedYear;
+                $.get(url, function (response) {
+                    makes = response.data;
+                    var control = $("#validationSelectMaker");
+                    control.html('<option selected>{{ $lang['Select Maker'] }}</option>');
+                    $.each(makes, function (i, d) {
+                        // You will need to alter the below to get the right values from your json object.  Guessing that d.id / d.modelName are columns in your carModels data
+                        control.append('<option value="' + d + '">' + d + '</option>');
+                    });
+                });
+            }
+
+            function loadVehicleModels() {
+                var url = apiUrl + "/vehicle/" + selectedMake.toLowerCase() + "/models/" + selectedYear;
+                $.get(url, function (response) {
+                    models = response.data;
+                    var control = $('#validationSelectModel');
+                    control.html('<option selected>{{ $lang['Select Model'] }}</option>');
+                    $.each(models, function (i, d) {
+                        // You will need to alter the below to get the right values from your json object.  Guessing that d.id / d.modelName are columns in your carModels data
+                        control.append('<option value="' + d + '">' + d + '</option>');
+                    });
+                });
+            }
 
             $('#validationSelectMaker').change(function (val) {
                 selectedMake = val.target.value;
@@ -1179,7 +1185,7 @@ include "configuracion.php"
             loadYears();
             loadVehicleMakes();
             // loadVehicleModels();
-        })();
+        });
     </script>
 
     <!--Este es el JS para la Validacion-->
@@ -1191,7 +1197,7 @@ include "configuracion.php"
             var form = $('#SignUpForm');
 
             $('#finish-button').on('click', function(event) {
-                debugger;
+
                 event.preventDefault();
                 event.stopPropagation();
                 form.addClass('was-validated');
@@ -1203,11 +1209,32 @@ include "configuracion.php"
                     return;
                 }
 
+                // var files = {
+                //     tlc_license_img: $('#TLC-License-Img')[0].files,
+                //     tlc_inspection_img: $('#TLC-Inspection-Img')[0].files,
+                //     dmv_license_img: $('#DMV-License-Img')[0].files,
+                //     car_registration_img: $('#Car-Registration-Img')[0].files,
+                //     proof_of_insurance_img: $('#Proof-Of-Insurance-Img')[0].files,
+                //     certificate_of_insurance_img: $('#Certificate-Of-Insurance-Img')[0].files,
+                // };
+                //
+                // for (var file in files) {
+                //     if (files.hasOwnProperty(file) && files[file].length > 0) {
+                //         fd.append(file, file[0]);
+                //     }
+                // }
+                debugger;
+
+                // var fd = new FormData(form[0]);
+                var fd = new FormData(document.getElementById("SignUpForm"));
+
                 $.ajax({
                     url: 'http://localhost/api/signup',
                     type: 'post',
-                    dataType: 'json',
-                    data: form.serialize(),
+                    // dataType: 'json',
+                    data: fd,
+                    processData: false,
+                    contentType: false,
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },

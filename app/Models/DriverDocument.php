@@ -22,8 +22,6 @@ use Illuminate\Support\Carbon;
  */
 class DriverDocument extends Model
 {
-    use HasFactory;
-
     public function driver(): BelongsTo
     {
         return $this->belongsTo(Driver::class);

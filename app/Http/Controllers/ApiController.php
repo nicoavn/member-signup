@@ -7,6 +7,7 @@ use App\Http\Resources\ModelsResource;
 use App\Models\Address;
 use App\Models\Driver;
 use App\Models\DriverDocument;
+use App\Models\UploadedDocument;
 use App\Models\Vehicle;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -62,7 +63,7 @@ class ApiController extends Controller
 
     public function signUp(Request $request)
     {
-        $driver = new Driver;
+        $driver = new Driver();
         $driver->first_name = $request->input('First-Name');
         $driver->last_name = $request->input('Last-Name');
         $driver->social_security_no = $request->input('Social-Security');
@@ -75,14 +76,14 @@ class ApiController extends Controller
         $driver->emergency_contact_phone = $request->input('Emergency-Phone', '');
         $driver->save();
 
-        $driverDocument = new DriverDocument;
+        $driverDocument = new DriverDocument();
         $driverDocument->dmv_license = $request->input('DMV');
         $driverDocument->tlc_license = $request->input('TLC');
         $driverDocument->tlc_expiration_date = Carbon::parse($request->input('TLC-Expiration'));
         $driverDocument->driver()->associate($driver);
         $driverDocument->save();
 
-        $address = new Address;
+        $address = new Address();
         $address->street_address = $request->input('Street-Address');
         $address->apt_unit = $request->input('Apartment');
         $address->city = $request->input('City');
@@ -91,7 +92,7 @@ class ApiController extends Controller
         $address->driver()->associate($driver);
         $address->save();
 
-        $vehicle = new Vehicle;
+        $vehicle = new Vehicle();
         $vehicle->make = $request->input('Car-Maker');
         $vehicle->model = $request->input('Car-Model');
         $vehicle->color = $request->input('Car-Color');
@@ -105,6 +106,55 @@ class ApiController extends Controller
         $vehicle->nys_registration = $request->input('nys_registration', false);
         $vehicle->driver()->associate($driver);
         $vehicle->save();
+
+
+        $tlcLicenseImg = $request->file('TLC-License-Img');
+        $tlcLicenseImgPath = $tlcLicenseImg->store('driverFiles/' . base64_encode($driver->id));
+        $uploadedDocument = new UploadedDocument();
+        $uploadedDocument->filename = $tlcLicenseImgPath;
+        $uploadedDocument->document_type = UploadedDocument::DOCUMENT_TYPE_TLC_LICENSE;
+        $uploadedDocument->driver()->associate($driver);
+        $uploadedDocument->save();
+
+        $tlcInspectionImg = $request->file('TLC-Inspection-Img');
+        $tlcInspectionImgPath = $tlcInspectionImg->store('driverFiles/' . base64_encode($driver->id));
+        $uploadedDocument = new UploadedDocument();
+        $uploadedDocument->filename = $tlcInspectionImgPath;
+        $uploadedDocument->document_type = UploadedDocument::DOCUMENT_TYPE_TLC_INSPECTION;
+        $uploadedDocument->driver()->associate($driver);
+        $uploadedDocument->save();
+
+        $dmvLicenseImg = $request->file('DMV-License-Img');
+        $dmvLicenseImgPath = $dmvLicenseImg->store('driverFiles/' . base64_encode($driver->id));
+        $uploadedDocument = new UploadedDocument();
+        $uploadedDocument->filename = $dmvLicenseImgPath;
+        $uploadedDocument->document_type = UploadedDocument::DOCUMENT_TYPE_DMV_LICENSE;
+        $uploadedDocument->driver()->associate($driver);
+        $uploadedDocument->save();
+
+        $carRegistrationImg = $request->file('Car-Registration-Img');
+        $carRegistrationImgPath = $carRegistrationImg->store('driverFiles/' . base64_encode($driver->id));
+        $uploadedDocument = new UploadedDocument();
+        $uploadedDocument->filename = $carRegistrationImgPath;
+        $uploadedDocument->document_type = UploadedDocument::DOCUMENT_TYPE_CAR_REGISTRATION;
+        $uploadedDocument->driver()->associate($driver);
+        $uploadedDocument->save();
+
+        $proofOfInsuranceImg = $request->file('Proof-Of-Insurance-Img');
+        $proofOfInsuranceImgPath = $proofOfInsuranceImg->store('driverFiles/' . base64_encode($driver->id));
+        $uploadedDocument = new UploadedDocument();
+        $uploadedDocument->filename = $proofOfInsuranceImgPath;
+        $uploadedDocument->document_type = UploadedDocument::DOCUMENT_TYPE_PROOF_OF_INSURANCE;
+        $uploadedDocument->driver()->associate($driver);
+        $uploadedDocument->save();
+
+        $certificateOfInsuranceImg = $request->file('Certificate-Of-Insurance-Img');
+        $certificateOfInsuranceImgPath = $certificateOfInsuranceImg->store('driverFiles/' . base64_encode($driver->id));
+        $uploadedDocument = new UploadedDocument();
+        $uploadedDocument->filename = $certificateOfInsuranceImgPath;
+        $uploadedDocument->document_type = UploadedDocument::DOCUMENT_TYPE_CERTIFICATE_OF_INSURANCE;
+        $uploadedDocument->driver()->associate($driver);
+        $uploadedDocument->save();
 
         return new JsonResponse($address);
     }
