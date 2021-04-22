@@ -1129,7 +1129,7 @@ include "configuracion.php"
         var years = [];
         var makes = [];
         var models = [];
-        var apiUrl = "http://localhost/api";
+        var apiUrl = "/api";
         var selectedMake = 'Honda';
         var selectedModel = 'Civic';
         var selectedYear = new Date().getFullYear();
@@ -1229,7 +1229,7 @@ include "configuracion.php"
                 var fd = new FormData(document.getElementById("SignUpForm"));
 
                 $.ajax({
-                    url: 'http://localhost/api/signup',
+                    url: '/api/signup',
                     type: 'post',
                     // dataType: 'json',
                     data: fd,
